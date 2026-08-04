@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémonastics Research — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748; --color-text-light: #5a6577;
+            --color-bg: #fafaf9; --color-surface: #ffffff;
+            --color-accent: #4a6fa5; --color-gold: #b89a4a;
+            --color-border: #d4cfc7; --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--color-text); background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .site-header { border-bottom: 1px solid var(--color-border); background: var(--color-surface); }
+        .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1.5rem 1rem; }
+        .site-name { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--color-text); text-decoration: none; }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+        .back-link { font-size: 0.85rem; color: var(--color-text-light); margin-top: 0.25rem; }
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a { display: block; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; color: var(--color-text-light); text-decoration: none; letter-spacing: 0.03em; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+        nav a:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+        main { max-width: var(--max-width); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--color-text); margin: 2rem 0 0.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--color-border); }
+        h2:first-child { margin-top: 0; }
+        .content-block { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+        .content-block li { padding: 0.3rem 0 0.3rem 1rem; position: relative; list-style: none; }
+        .content-block li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 5px; height: 5px; background: var(--color-gold); border-radius: 50%; }
+        .content-block ul, .content-block ol { list-style: none; }
+        .content-block img.book-cover { display: block; max-width: 180px; margin: 0 auto 1rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .paper-entry { padding: 0.5rem 0; border-bottom: 1px solid #eeebe6; font-size: 0.93rem; line-height: 1.7; }
+        .paper-entry:last-child { border-bottom: none; }
+        iframe, video { max-width: 100%; border-radius: 6px; margin: 0.5rem 0; }
+        audio { margin: 0.5rem 0; }
+        
+        body {
+            font-family: 'Segoe UI', 'Hiragino Kaku Gothic Pro', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .main-title {
+            text-align: center;
+            color: white;
+            font-size: 2.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .research-flow {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            position: relative;
+        }
+        
+        .phase {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .phase-number {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .phase-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .phase-period {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .research-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .research-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .foundational { border-left-color: #e74c3c; }
+        .experimental { border-left-color: #3498db; }
+        .crosslingual { border-left-color: #9b59b6; }
+        .theoretical { border-left-color: #f39c12; }
+        .application { border-left-color: #27ae60; }
+        
+        .item-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            line-height: 1.3;
+        }
+        
+        .item-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        
+        .collaborators {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+        
+        .tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+        
+        .connections {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .connections-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .connection-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .connection-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .future-directions {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .future-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .future-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .future-item {
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-title {
+                font-size: 2.2em;
+            }
+            
+            .phase-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    
+        @media (max-width: 600px) { .site-name { font-size: 1.5rem; } h2 { font-size: 1.25rem; } }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+        <div class="back-link"><a href="research.html">← Research に戻る</a></div>
+    </div>
+    <nav><ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+    </ul></nav>
+</header>
+<main>
+
+    <div class="container">
+        <h1 class="main-title">Pokémonastics Research Evolution</h1>
+        <p class="subtitle">A Sound Symbolic Journey Through Pokémon Names</p>
+        
+        <div class="research-flow">
+            <!-- Phase 1: Origins -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">The Beginning</div>
+                    <div class="phase-period">2016-2018</div>
+                </div>
+                <div class="research-grid">
+                    <div class="research-item foundational">
+                        <div class="item-title">Kawahara, Noto & Kumagai (2018) - Phonetica</div>
+                        <div class="collaborators">Kawahara Shigeto • Noto Atsushi • Kumagai Gakuji</div>
+                        <div class="item-description">The very first study analyzing existing Pokémon names in Japanese, discovering correlations between voiced obstruents/name length and Pokémon parameters (weight, height, evolution).</div>
+                        <div class="tags">
+                            <span class="tag">Foundational</span>
+                            <span class="tag">Japanese</span>
+                            <span class="tag">Corpus Analysis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item application">
+                        <div class="item-title">Educational Applications</div>
+                        <div class="collaborators">Kawahara Shigeto</div>
+                        <div class="item-description">Introducing phonetics through sound symbolism (Kawahara 2017, 2019) - using Pokémon as a 'hook' to attract student interest.</div>
+                        <div class="tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Public Outreach</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Experimental Validation -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">Experimental Explorations</div>
+                    <div class="phase-period">2017-2019</div>
+                </div>
+                <div class="research-grid">
+                    <div class="research-item experimental">
+                        <div class="item-title">Productivity Testing with Nonce Names</div>
+                        <div class="collaborators">Kawahara Shigeto • Kumagai Gakuji</div>
+                        <div class="item-description">First experimental studies using artificial Pokémon names (Kawahara & Kumagai 2019, Kumagai & Kawahara 2019) to test if sound symbolic patterns are productive.</div>
+                        <div class="tags">
+                            <span class="tag">Experiment</span>
+                            <span class="tag">Nonce Words</span>
+                            <span class="tag">MaxEnt Model</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item experimental">
+                        <div class="item-title">Multi-dimensional Sound Symbolism</div>
+                        <div class="collaborators">Kawahara Shigeto • Kumagai Gakuji</div>
+                        <div class="item-description">Testing whether weight, height, and strength can be signaled by voiced obstruents (Kawahara & Kumagai 2021), inspired by Winter et al. (2019).</div>
+                        <div class="tags">
+                            <span class="tag">Multi-dimensional</span>
+                            <span class="tag">Weight/Height</span>
+                            <span class="tag">Strength</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item experimental">
+                        <div class="item-title">Developmental Studies</div>
+                        <div class="collaborators">Kawahara Shigeto • Isobe Miwa et al.</div>
+                        <div class="item-description">Testing sound symbolic patterns with preschoolers (Kawahara et al. 2018a) to explore developmental aspects.</div>
+                        <div class="tags">
+                            <span class="tag">Development</span>
+                            <span class="tag">Children</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Cross-linguistic Expansion -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">Going Beyond Japanese</div>
+                    <div class="phase-period">2018-2022</div>
+                </div>
+                <div class="research-grid">
+                    <div class="research-item crosslingual">
+                        <div class="item-title">Multi-language Analysis</div>
+                        <div class="collaborators">Stephanie Shih • Jordan Ackerman 他</div>
+                        <div class="item-description">Analysis of Pokémon names in Cantonese, English, Japanese, Korean, Mandarin, and Russian (Shih et al. 2019). Term "Pokémonastics" coined by Shih.</div>
+                        <div class="tags">
+                            <span class="tag">Multi-linguistic</span>
+                            <span class="tag">Cross-cultural</span>
+                            <span class="tag">Comparative</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item crosslingual">
+                        <div class="item-title">English Speaker Experiments</div>
+                        <div class="collaborators">Kawahara Shigeto • Jeff Moore</div>
+                        <div class="item-description">Nonce-word experiments with English speakers (Kawahara & Moore 2021), followed by cumulativity studies with Canaan Breiss.</div>
+                        <div class="tags">
+                            <span class="tag">English</span>
+                            <span class="tag">Cumulativity</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item crosslingual">
+                        <div class="item-title">Brazilian Portuguese & Russian</div>
+                        <div class="collaborators">Mahayana Godoy • Kumagai Gakuji</div>
+                        <div class="item-description">Studies with Brazilian Portuguese speakers (Godoy et al. 2020) and Russian speakers (Kumagai & Kawahara 2022), exploring diverse phonetic features.</div>
+                        <div class="tags">
+                            <span class="tag">Portuguese</span>
+                            <span class="tag">Russian</span>
+                            <span class="tag">Georgian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Theoretical Development -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">Theoretical Integration</div>
+                    <div class="phase-period">2020-2024</div>
+                </div>
+                <div class="research-grid">
+                    <div class="research-item theoretical">
+                        <div class="item-title">Why Phonologists Should Care</div>
+                        <div class="collaborators">Kawahara Shigeto</div>
+                        <div class="item-description">Arguing for the importance of sound symbolism in theoretical phonology (Kawahara 2020b), exploring phonetic grounding and input-output mappings.</div>
+                        <div class="tags">
+                            <span class="tag">Theory</span>
+                            <span class="tag">Phonology</span>
+                            <span class="tag">Integration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item theoretical">
+                        <div class="item-title">MaxEnt & Wug-shaped Curves</div>
+                        <div class="collaborators">Kawahara Shigeto</div>
+                        <div class="item-description">Testing quantitative predictions of MaxEnt models (Kawahara 2020d, 2021b), creating stripy wug-shaped curves in sound symbolism.</div>
+                        <div class="tags">
+                            <span class="tag">MaxEnt</span>
+                            <span class="tag">Wug-curves</span>
+                            <span class="tag">Quantitative</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item theoretical">
+                        <div class="item-title">Counting vs. Non-counting</div>
+                        <div class="collaborators">川原繁人 • 熊谷学而</div>
+                        <div class="item-description">Showing that sound symbolism can count segments while phonology cannot (Kawahara & Kumagai 2024), challenging traditional boundaries.</div>
+                        <div class="tags">
+                            <span class="tag">Counting</span>
+                            <span class="tag">Cumulativity</span>
+                            <span class="tag">Boundary</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 5: Expanded Applications -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">5</div>
+                    <div class="phase-title">Beyond Names: Types & Applications</div>
+                    <div class="phase-period">2018-Present</div>
+                </div>
+                <div class="research-grid">
+                    <div class="research-item application">
+                        <div class="item-title">Pokémon Type Prediction</div>
+                        <div class="collaborators">Hosokawa Yuta • Atsumi Naho et al.</div>
+                        <div class="item-description">Analyzing sound symbolism in Pokémon types - bilabials in fairy types, voiced obstruents in villainous types (Hosokawa et al. 2018, Kawahara & Kumagai 2019b).</div>
+                        <div class="tags">
+                            <span class="tag">Types</span>
+                            <span class="tag">Prediction</span>
+                            <span class="tag">Student-led</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item application">
+                        <div class="item-title">Flying Types & Ancient Wisdom</div>
+                        <div class="collaborators">Kawahara Shigeto • Mahayana Godoy • Kumagai Gakuji</div>
+                        <div class="item-description">Testing ancient claims about sibilants and wind/sky/flying (Kawahara et al. 2020a), accidentally getting 700+ participants overnight!</div>
+                        <div class="tags">
+                            <span class="tag">Flying</span>
+                            <span class="tag">Sibilants</span>
+                            <span class="tag">Ancient wisdom</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item application">
+                        <div class="item-title">Friendship & Bouba-Kiki</div>
+                        <div class="collaborators">Alexander Kilpatrick • Kawahara Shigeto</div>
+                        <div class="item-description">Analyzing base friendship parameters across languages (Kilpatrick et al. 2023b) and testing bouba-kiki effect with Pokémon shapes (Kawahara 2021a).</div>
+                        <div class="tags">
+                            <span class="tag">Friendship</span>
+                            <span class="tag">Bouba-kiki</span>
+                            <span class="tag">Shape</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Findings -->
+        <div class="connections">
+            <div class="connections-title">Cross-linguistic Universal Finding</div>
+            <div class="connection-flow">
+                <div class="connection-item">Japanese</div>
+                <div class="connection-item">English</div>
+                <div class="connection-item">Portuguese</div>
+                <div class="connection-item">Russian</div>
+                <div class="connection-item">Georgian</div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #2c3e50;">
+                <strong>Voiced obstruents universally associated with post-evolution Pokémon names</strong><br>
+                <em>Possible basis: oral cavity expansion and low frequency energy</em>
+            </p>
+        </div>
+
+        <!-- Future Directions -->
+        <div class="future-directions">
+            <div class="future-title">Future Research Directions</div>
+            <div class="future-items">
+                <div class="future-item">
+                    <strong>New Languages</strong><br>
+                    German (Cwiek 2022), more diverse linguistic families
+                </div>
+                <div class="future-item">
+                    <strong>Phonological Alternations</strong><br>
+                    Can sound symbolism cause phonological changes?
+                </div>
+                <div class="future-item">
+                    <strong>Computational Methods</strong><br>
+                    Random forest, machine learning approaches
+                </div>
+                <div class="future-item">
+                    <strong>Educational Applications</strong><br>
+                    Expanding pedagogical uses worldwide
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

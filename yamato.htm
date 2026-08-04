@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamato Consonant Co-occurrence — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748; --color-text-light: #5a6577;
+            --color-bg: #fafaf9; --color-surface: #ffffff;
+            --color-accent: #4a6fa5; --color-gold: #b89a4a;
+            --color-border: #d4cfc7; --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--color-text); background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .site-header { border-bottom: 1px solid var(--color-border); background: var(--color-surface); }
+        .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1.5rem 1rem; }
+        .site-name { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--color-text); text-decoration: none; }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+        .back-link { font-size: 0.85rem; color: var(--color-text-light); margin-top: 0.25rem; }
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a { display: block; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; color: var(--color-text-light); text-decoration: none; letter-spacing: 0.03em; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+        nav a:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+        main { max-width: var(--max-width); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--color-text); margin: 2rem 0 0.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--color-border); }
+        h2:first-child { margin-top: 0; }
+        .content-block { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+        .content-block li { padding: 0.3rem 0 0.3rem 1rem; position: relative; list-style: none; }
+        .content-block li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 5px; height: 5px; background: var(--color-gold); border-radius: 50%; }
+        .content-block ul, .content-block ol { list-style: none; }
+        .content-block img.book-cover { display: block; max-width: 180px; margin: 0 auto 1rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .paper-entry { padding: 0.5rem 0; border-bottom: 1px solid #eeebe6; font-size: 0.93rem; line-height: 1.7; }
+        .paper-entry:last-child { border-bottom: none; }
+        iframe, video { max-width: 100%; border-radius: 6px; margin: 0.5rem 0; }
+        audio { margin: 0.5rem 0; }
+        
+        @media (max-width: 600px) { .site-name { font-size: 1.5rem; } h2 { font-size: 1.25rem; } }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+        <div class="back-link"><a href="resource.html">← Resources に戻る</a></div>
+    </div>
+    <nav><ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+    </ul></nav>
+</header>
+<main>
+
+    <h2>Yamato Consonant Cooccurrence Patterns</h2>
+    <div class="content-block">
+        <H1>Yamato Consonant Cooccurrence Patterns</H1>
+<P> This website presents some of the results of a project on consonant co-occurrence restrictions found in Yamato Japanese from Koojien entries, developed by Shigeto Kawahara (UMass, Amherst), Hajime Ono (University of Maryland), and Kiyoshi Sudo (New York University). Our project aims to assess the consonant co-occurrence restriction patterns of Yamato Japanese. Portions of this project were presented at The 14th Japanese/Korean Linguistics Conference.  <BR>
+<BR>
+
+You can consult the <a href="./pdf/kawahara_et_al_jk14.pdf" target="new">the paper </A> for methodological details. <BR>
+
+<BR>
+Anybody who is interested is welcome to consult the charts presented on this website and use the data herein for <B>academic purposes </B>.  If you present/publish your research using a part of or the whole data from this chart, please cite our project with the following reference information:<BR>
+<BR>
+Kawahara, Shigeto, Hajime Ono, and Kiyoshi Sudo (2006) Consonant co-occurrence restrictions in Yamato Japanese. Japanese/Korean Linguistics 14: 27-38. Stanford: CSLI Publications <BR>
+
+</P>
+<H2> Links to Data Charts</H2>
+
+<A HREF="by_class_collapsed.htm"> O/E values based on identity classes (linear order abstracted away)</A><BR>
+<A HREF="by_class.htm"> O/E values based on identity classes (linear order preserved)</A><BR>
+<A HREF="seg_by_seg.htm"> Segment-by-segment O/E values </A><BR>
+<A HREF="non_adj.htm"> Co-occurrence patterns of non-adjacent consonants</A><BR><A HREF="./pdf/ident.pdf"> O/E values of identical consonants (pdf)</A><BR>
+<A HREF="tatamu.txt"> List of CiCiCj verbal roots (txt. in Japanese)</A><BR>
+
+<BR>
+    </div>
+</main>
+</body>
+</html>

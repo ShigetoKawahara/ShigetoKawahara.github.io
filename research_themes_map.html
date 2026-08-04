@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Themes Map — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748; --color-text-light: #5a6577;
+            --color-bg: #fafaf9; --color-surface: #ffffff;
+            --color-accent: #4a6fa5; --color-gold: #b89a4a;
+            --color-border: #d4cfc7; --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--color-text); background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .site-header { border-bottom: 1px solid var(--color-border); background: var(--color-surface); }
+        .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1.5rem 1rem; }
+        .site-name { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--color-text); text-decoration: none; }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+        .back-link { font-size: 0.85rem; color: var(--color-text-light); margin-top: 0.25rem; }
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a { display: block; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; color: var(--color-text-light); text-decoration: none; letter-spacing: 0.03em; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+        nav a:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+        main { max-width: var(--max-width); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--color-text); margin: 2rem 0 0.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--color-border); }
+        h2:first-child { margin-top: 0; }
+        .content-block { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+        .content-block li { padding: 0.3rem 0 0.3rem 1rem; position: relative; list-style: none; }
+        .content-block li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 5px; height: 5px; background: var(--color-gold); border-radius: 50%; }
+        .content-block ul, .content-block ol { list-style: none; }
+        .content-block img.book-cover { display: block; max-width: 180px; margin: 0 auto 1rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .paper-entry { padding: 0.5rem 0; border-bottom: 1px solid #eeebe6; font-size: 0.93rem; line-height: 1.7; }
+        .paper-entry:last-child { border-bottom: none; }
+        iframe, video { max-width: 100%; border-radius: 6px; margin: 0.5rem 0; }
+        audio { margin: 0.5rem 0; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: radial-gradient(circle at center, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: auto;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1em;
+            margin-bottom: 50px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .research-map {
+            position: relative;
+            width: 100%;
+            min-height: 800px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .theme-node {
+            position: absolute;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 3px solid;
+            min-width: 200px;
+            max-width: 280px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .theme-node:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            z-index: 10;
+        }
+        
+        .central-theme {
+            border-color: #e74c3c;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            font-size: 1.1em;
+            min-width: 250px;
+            z-index: 5;
+        }
+        
+        .core-theme {
+            border-color: #3498db;
+        }
+        
+        .methodological-theme {
+            border-color: #9b59b6;
+        }
+        
+        .phonetic-theme {
+            border-color: #f39c12;
+        }
+        
+        .collaborative-theme {
+            border-color: #27ae60;
+        }
+        
+        .theme-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: inherit;
+        }
+        
+        .central-theme .theme-title {
+            color: white;
+            font-size: 1.3em;
+        }
+        
+        .theme-description {
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .central-theme .theme-description {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .theme-duration {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .central-theme .theme-duration {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+            transform-origin: left center;
+            z-index: 1;
+        }
+        
+        /* Positioning for different themes */
+        .pokemonastics {
+            /* Central position - handled by central-theme class */
+        }
+        
+        .geminate-devoicing {
+            top: 10%;
+            left: 15%;
+        }
+        
+        .psycholinguistic {
+            top: 15%;
+            right: 10%;
+        }
+        
+        .ema-articulation {
+            bottom: 15%;
+            left: 10%;
+        }
+        
+        .predictability {
+            top: 45%;
+            left: 5%;
+        }
+        
+        .duration-phonetics {
+            bottom: 10%;
+            right: 15%;
+        }
+        
+        .prosody-accent {
+            top: 45%;
+            right: 5%;
+        }
+        
+        .collaborative-work {
+            bottom: 20%;
+            right: 40%;
+        }
+        
+        .legend {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .legend-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .legend-color {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+        
+        .insights {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .insights-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .insight-item {
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 1024px) {
+            .research-map {
+                height: auto;
+                min-height: 600px;
+            }
+            
+            .theme-node {
+                position: relative;
+                margin: 20px auto;
+                max-width: 100%;
+            }
+            
+            .central-theme {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin: 20px auto;
+            }
+            
+            .connection-line {
+                display: none;
+            }
+        }
+    
+        @media (max-width: 600px) { .site-name { font-size: 1.5rem; } h2 { font-size: 1.25rem; } }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+        <div class="back-link"><a href="research.html">← Research に戻る</a></div>
+    </div>
+    <nav><ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+    </ul></nav>
+</header>
+<main>
+
+    <div class="container">
+        <h1 class="title">Research Themes Map</h1>
+        <p class="subtitle">Interconnected Areas of Linguistic Investigation</p>
+        
+        <div class="research-map">
+            <!-- Connection lines -->
+            <div class="connection-line" style="top: 45%; left: 25%; width: 25%; transform: rotate(-15deg);"></div>
+            <div class="connection-line" style="top: 35%; left: 60%; width: 20%; transform: rotate(25deg);"></div>
+            <div class="connection-line" style="bottom: 35%; right: 45%; width: 15%; transform: rotate(-45deg);"></div>
+            <div class="connection-line" style="bottom: 25%; right: 40%; width: 20%; transform: rotate(-25deg);"></div>
+            <div class="connection-line" style="top: 50%; left: 25%; width: 25%;"></div>
+            <div class="connection-line" style="top: 50%; right: 25%; width: 25%;"></div>
+            
+            <!-- Central Theme -->
+            <div class="theme-node central-theme pokemonastics">
+                <div class="theme-title">🎮 Pokémonastics</div>
+                <div class="theme-description">
+                    Sound symbolism using Pokémon names - corpus analysis, experiments, cross-linguistic studies, educational applications
+                </div>
+                <div class="theme-duration">2016-present • 50+ publications</div>
+            </div>
+            
+            <!-- Core Research Themes -->
+            <div class="theme-node core-theme geminate-devoicing">
+                <div class="theme-title">🔤 Japanese Geminate Devoicing</div>
+                <div class="theme-description">
+                    Long-term investigation of voiced geminate devoicing in Japanese loanwords using corpus studies and experiments
+                </div>
+                <div class="theme-duration">2003-present • ~15 years</div>
+            </div>
+            
+            <div class="theme-node methodological-theme psycholinguistic">
+                <div class="theme-title">🧠 Psycholinguistic Methods</div>
+                <div class="theme-description">
+                    Phonological judgment experiments, rating studies, wug tests - exploring different experimental modes
+                </div>
+                <div class="theme-duration">Ongoing methodology</div>
+            </div>
+            
+            <div class="theme-node phonetic-theme ema-articulation">
+                <div class="theme-title">📊 EMA & Articulation</div>
+                <div class="theme-description">
+                    ElectroMagnetic Articulography studies of Japanese phonetics, jaw movement, metrical structure
+                </div>
+                <div class="theme-duration">Articulatory phonetics</div>
+            </div>
+            
+            <div class="theme-node methodological-theme predictability">
+                <div class="theme-title">📈 Predictability & Information</div>
+                <div class="theme-description">
+                    How information theory and entropy affect sound patterns - Shannon's entropy in phonetics/phonology
+                </div>
+                <div class="theme-duration">Information-theoretic approach</div>
+            </div>
+            
+            <div class="theme-node phonetic-theme duration-phonetics">
+                <div class="theme-title">⏱️ Duration & Timing</div>
+                <div class="theme-description">
+                    Phonetics of geminates, long vowels, emphatic lengthening, durational contrasts in Japanese
+                </div>
+                <div class="theme-duration">Temporal phonetics</div>
+            </div>
+            
+            <div class="theme-node core-theme prosody-accent">
+                <div class="theme-title">🎵 Prosody & Accent</div>
+                <div class="theme-description">
+                    Japanese accent, intonation, phrasal phonetics, articulatory correlates of prosodic structure
+                </div>
+                <div class="theme-duration">Cross-linguistic prosody</div>
+            </div>
+            
+            <div class="theme-node collaborative-theme collaborative-work">
+                <div class="theme-title">🤝 Collaborative Research</div>
+                <div class="theme-description">
+                    African languages, L2 acquisition, child speech, sound symbolism, rap rhymes, maid voice, yoga sounds
+                </div>
+                <div class="theme-duration">Diverse collaborations</div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-title">Research Area Categories</div>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #e74c3c; border-color: #e74c3c;"></div>
+                    <span><strong>Signature Research:</strong> Pokémonastics & Sound Symbolism</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #3498db; border-color: #3498db;"></div>
+                    <span><strong>Core Phonology:</strong> Japanese phonological patterns</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #9b59b6; border-color: #9b59b6;"></div>
+                    <span><strong>Methodology:</strong> Experimental & computational approaches</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #f39c12; border-color: #f39c12;"></div>
+                    <span><strong>Phonetics:</strong> Articulatory & acoustic studies</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #27ae60; border-color: #27ae60;"></div>
+                    <span><strong>Collaborative:</strong> Interdisciplinary & cross-linguistic work</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insights">
+            <div class="insights-title">Research Integration & Impact</div>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <strong>Methodological Innovation</strong><br>
+                    Combining corpus analysis, experiments, computational modeling, and EMA to address phonological questions
+                </div>
+                <div class="insight-item">
+                    <strong>Educational Outreach</strong><br>
+                    Using Pokémon as a "hook" to make phonetics accessible and engaging for students and the public
+                </div>
+                <div class="insight-item">
+                    <strong>Cross-linguistic Perspective</strong><br>
+                    Extending Japanese-based findings to understand universal vs. language-specific patterns
+                </div>
+                <div class="insight-item">
+                    <strong>Theory-Practice Bridge</strong><br>
+                    Connecting formal phonological theory with empirical phonetic evidence and psycholinguistic reality
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add interactive hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const nodes = document.querySelectorAll('.theme-node');
+            
+            nodes.forEach(node => {
+                node.addEventListener('mouseenter', function() {
+                    // Slightly fade other nodes
+                    nodes.forEach(otherNode => {
+                        if (otherNode !== node) {
+                            otherNode.style.opacity = '0.7';
+                        }
+                    });
+                });
+                
+                node.addEventListener('mouseleave', function() {
+                    // Restore opacity
+                    nodes.forEach(otherNode => {
+                        otherNode.style.opacity = '1';
+                    });
+                });
+            });
+        });
+    </script>
+
+</main>
+</body>
+</html>
