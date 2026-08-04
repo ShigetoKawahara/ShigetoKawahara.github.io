@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>川原繁人 - 書籍タイムライン</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slide-in {
+            animation: slideIn 0.3s ease-in-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hover-shadow:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="p-6">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- ヘッダー -->
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                    📚 川原繁人の書籍についてのまとめ（軌跡と込めた想い）
+                </h1>
+
+                <!-- 統計サマリー -->
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8">
+                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                        <div class="text-2xl font-bold text-blue-600">14</div>
+                        <div class="text-sm text-gray-600">総著書数</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                        <div class="text-2xl font-bold text-purple-600">8</div>
+                        <div class="text-sm text-gray-600">入門書</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                        <div class="text-2xl font-bold text-red-600">8</div>
+                        <div class="text-sm text-gray-600">教科書推奨</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                        <div class="text-2xl font-bold text-teal-600">13</div>
+                        <div class="text-sm text-gray-600">出版社数</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2025-2026年セクション -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    🚀 2025年〜2026年の著書
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- KADOKAWA 2026 -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl shadow-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-4xl">🔰</span>
+                                <div>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-bold">
+                                        2026年刊行予定
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-medium text-gray-700">KADOKAWA</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 leading-tight">
+                            『友だち以上恋人未満の人工知能:言語学者のAI倫理ノート』
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">専門性:</span>
+                                <span class="ml-2">3/5 ⭐⭐⭐</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読みやすさ:</span>
+                                <span class="ml-2 text-lg">◎</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読了時間:</span>
+                                <span class="ml-2">2時間</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">教科書:</span>
+                                <span class="ml-2 text-lg">◎</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-700 mb-1">対象読者:</div>
+                            <div class="text-sm text-gray-600">一般</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+                            <div class="text-sm font-medium text-gray-700 mb-2">📖 扱っているトピック:</div>
+                            <div class="text-sm italic text-gray-800">AIに依存せず、振り回されることもなく、対等に付き合うための心得の数々</div>
+                        </div>
+                        
+                        <div class="bg-purple-100 rounded-lg p-4 mb-4">
+                            <div class="text-sm font-medium text-purple-800 mb-2">💭 込めた想い:</div>
+                            <div class="text-sm font-bold text-purple-900 leading-relaxed">
+                                「AI倫理」に関するさまざまな話題を、短編小説を読者のみなさまと考えたい!
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="https://www.amazon.co.jp/dp/4048117882" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-md">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                    <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                </svg>
+                                Amazonで詳細を見る
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 講談社絵本 2026 -->
+                    <div class="bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-200 rounded-xl shadow-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-4xl">🔰</span>
+                                <div>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">
+                                        2026年刊行予定
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-medium text-gray-700">講談社</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 leading-tight">
+                            絵本 きこえる うたうからだのふしぎ
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">専門性:</span>
+                                <span class="ml-2">4/5 ⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読みやすさ:</span>
+                                <span class="ml-2 text-lg">◎</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読了時間:</span>
+                                <span class="ml-2">15分</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">教科書:</span>
+                                <span class="ml-2 text-lg">—</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-700 mb-1">対象読者:</div>
+                            <div class="text-sm text-gray-600">子ども・一般</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+                            <div class="text-sm font-medium text-gray-700 mb-2">📖 扱っているトピック:</div>
+                            <div class="text-sm italic text-gray-800">「聞こえる」の不思議を大解明!</div>
+                        </div>
+                        
+                        <div class="bg-green-100 rounded-lg p-4 mb-4">
+                            <div class="text-sm font-medium text-green-800 mb-2">💭 込めた想い:</div>
+                            <div class="text-sm font-bold text-green-900 leading-relaxed">
+                                音を聞くことってすごいこと
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="https://www.amazon.co.jp/dp/4065420164/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-md">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                    <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                </svg>
+                                Amazonで詳細を見る
+                            </a>
+                        </div>
+                    </div>
+
+                    
+                    <!-- 朝日新書 -->
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-xl shadow-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-4xl">🔍</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-medium text-gray-700">朝日新書</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 leading-tight">
+                            言語学者、生成AIを危ぶむ
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">専門性:</span>
+                                <span class="ml-2">4/5 ⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読みやすさ:</span>
+                                <span class="ml-2 text-lg">○</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読了時間:</span>
+                                <span class="ml-2">2時間</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">教科書:</span>
+                                <span class="ml-2 text-lg">○</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-700 mb-1">対象読者:</div>
+                            <div class="text-sm text-gray-600">一般・大学生・子育て中の方々</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+                            <div class="text-sm font-medium text-gray-700 mb-2">📖 扱っているトピック:</div>
+                            <div class="text-sm italic text-gray-800">生成AIおしゃべりアプリが発達に与えると考えられる悪影響について</div>
+                        </div>
+                        
+                        <div class="bg-amber-100 rounded-lg p-4 mb-4">
+                            <div class="text-sm font-medium text-amber-800 mb-2">💭 込めた想い:</div>
+                            <div class="text-sm font-bold text-amber-900 leading-relaxed">
+                                生成AIを考えなしに、子どもに使わせない！
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="https://www.amazon.co.jp/dp/4022953381" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-md">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                    <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                </svg>
+                                Amazonで詳細を見る
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- NHK出版新書 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl shadow-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-4xl">🔰</span>
+                                <div>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold">
+                                        発売中！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-medium text-gray-700">NHK出版新書</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 leading-tight">
+                            『「声」の言語学入門』
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">専門性:</span>
+                                <span class="ml-2">4/5 ⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読みやすさ:</span>
+                                <span class="ml-2 text-lg">○</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読了時間:</span>
+                                <span class="ml-2">2時間</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">教科書:</span>
+                                <span class="ml-2 text-lg">◎</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-700 mb-1">対象読者:</div>
+                            <div class="text-sm text-gray-600">一般・大学生</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+                            <div class="text-sm font-medium text-gray-700 mb-2">📖 扱っているトピック:</div>
+                            <div class="text-sm italic text-gray-800">音声学の基礎・声のプロたちは音声学をどう感じたか</div>
+                        </div>
+                        
+                        <div class="bg-blue-100 rounded-lg p-4 mb-4">
+                            <div class="text-sm font-medium text-blue-800 mb-2">💭 込めた想い:</div>
+                            <div class="text-sm font-bold text-blue-900 leading-relaxed">
+                                音声学って、こんなにも声のプロたちの役に立ったんだ！
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="https://www.amazon.co.jp/dp/4140887419" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-md">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                    <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                </svg>
+                                Amazonで詳細を見る
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 新刊絵本 -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl shadow-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-4xl">📚</span>
+                                <div>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">
+                                        新刊
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-medium text-gray-700">講談社</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 leading-tight">
+                            絵本  きこえる！　うたうからだのふしぎ
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">専門性:</span>
+                                <span class="ml-2">4/5 ⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読みやすさ:</span>
+                                <span class="ml-2 text-lg">◎</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">読了時間:</span>
+                                <span class="ml-2">15分</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium text-gray-700">教科書:</span>
+                                <span class="ml-2 text-lg">◎</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-700 mb-1">対象読者:</div>
+                            <div class="text-sm text-gray-600">子ども・一般</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+                            <div class="text-sm font-medium text-gray-700 mb-2">📖 扱っているトピック:</div>
+                            <div class="text-sm italic text-gray-800">「聞こえる」の不思議を大解明！</div>
+                        </div>
+                        
+                        <div class="bg-green-100 rounded-lg p-4 mb-4">
+                            <div class="text-sm font-medium text-green-800 mb-2">💭 込めた想い:</div>
+                            <div class="text-sm font-bold text-green-900 leading-relaxed">
+                                音を聞くことってすごいこと
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="https://www.amazon.co.jp/dp/4065420164/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-md">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                    <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                </svg>
+                                Amazonで詳細を見る
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 既刊セクション -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    📚 既刊書籍の歩み
+                </h2>
+                
+                <div class="space-y-6" id="published-books">
+                    <!-- 書籍データはJavaScriptで動的に生成 -->
+                </div>
+            </div>
+
+            <!-- 出版社一覧 -->
+            <div class="mt-12 bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">🏢 出版社パートナー</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">だいわ文庫</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">ディスカバー21</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">三省堂</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">大和書房</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">東京書籍</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">岩波科学ライブラリー</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">教養検定新書</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">朝日出版</div>
+                        <div class="text-xs text-gray-600">1冊</div>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <div class="font-medium text-sm text-gray-800">講談社</div>
+                        <div class="text-xs text-gray-600">3冊</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 既刊書籍データ
+        const publishedBooks = [
+            {
+                year: 2024,
+                title: '『「あ」は「い」より大きい!?』',
+                publisher: 'だいわ文庫',
+                expertise: 2,
+                type: '🔰',
+                typeColor: '#4ade80',
+                audience: '一般・大学生',
+                textbook: '○',
+                readability: '○',
+                readingTime: '2時間',
+                topic: '音象徴を通して音声学の基礎を学ぶ',
+                thought: 'ポケモンのような身近な名づけから音声学を楽しく学べる！',
+                amazonLink: 'https://www.amazon.co.jp/dp/4479321063'
+            },
+            {
+                year: 2024,
+                title: '『日本語の秘密』',
+                publisher: '講談社現代新書',
+                expertise: 2,
+                type: '🔍',
+                typeColor: '#60a5fa',
+                audience: '一般',
+                textbook: '—',
+                readability: '○',
+                readingTime: '2時間',
+                topic: '対談集（俵万智さん、山寺宏一さん、Mummy-Dさん、川添愛さん）',
+                thought: '声のプロたちと「ことば」について、とことん語りあう！',
+                amazonLink: 'https://www.amazon.co.jp/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%81%AE%E7%A7%98%E5%AF%86-%E8%AC%9B%E8%AB%87%E7%A4%BE%E7%8F%BE%E4%BB%A3%E6%96%B0%E6%9B%B8-%E5%B7%9D%E5%8E%9F-%E7%B9%81%E4%BA%BA/dp/4065350557'
+            },
+            {
+                year: 2024,
+                title: '絵本 うたうからだのふしぎ',
+                publisher: '講談社',
+                expertise: 4,
+                type: '🔰',
+                typeColor: '#4ade80',
+                audience: '子ども、「こえ」の興味があるすべての人',
+                textbook: '—',
+                readability: '◎',
+                readingTime: '15分',
+                topic: '発声生理学（私たちが声をだす仕組み）を絵本で解説',
+                thought: '声を出せるってだけですごいこと！　絵本だけど正確性にもこだわりました',
+                amazonLink: 'https://www.amazon.co.jp/%E7%B5%B5%E6%9C%AC-%E3%81%86%E3%81%9F%E3%81%86%E3%81%8B%E3%82%89%E3%81%A0%E3%81%AE%E3%81%B5%E3%81%97%E3%81%8E-%E8%AC%9B%E8%AB%87%E7%A4%BE%E3%81%AE%E5%89%B5%E4%BD%9C%E7%B5%B5%E6%9C%AC-%E5%B7%9D%E5%8E%9F-%E7%B9%81%E4%BA%BA/dp/4065341590'
+            },
+            {
+                year: 2023,
+                title: '言語学的ラップの世界',
+                publisher: '東京書籍',
+                expertise: 4,
+                type: '🔍',
+                typeColor: '#60a5fa',
+                audience: '日本語ラップ and/or 言語学に興味がある方々',
+                textbook: '—',
+                readability: '○',
+                readingTime: '2時間',
+                topic: '言語学的ラップの分析',
+                thought: '日本語ラップを言語学の観点から徹底分析。ラッパーとの対談も三話収録',
+                amazonLink: 'https://www.amazon.co.jp/dp/4487816882'
+            },
+            {
+                year: 2023,
+                title: 'なぜ、お菓子の名前はパピプペポが多いのか?',
+                publisher: 'ディスカバー21',
+                expertise: 3,
+                type: '🔰',
+                typeColor: '#4ade80',
+                audience: '小学生・一般',
+                textbook: '—',
+                readability: '○',
+                readingTime: '1時間',
+                topic: '小学生（著者の母校）でおこなった実際の特別授業を書き起こし。解説も充実',
+                thought: '小学生に教えるって難しい　＞＜　でも、小学生だからこその鋭い質問も多数！',
+                amazonLink: 'https://www.amazon.co.jp/dp/4799329758/'
+            },
+            {
+                year: 2022,
+                title: '音声学者、娘とことばの不思議に飛び込む',
+                publisher: '朝日出版',
+                expertise: 4,
+                type: '🔰',
+                typeColor: '#4ade80',
+                audience: '一般・大学生・子育て中の方々',
+                textbook: '◎',
+                readability: '○',
+                readingTime: '2時間',
+                topic: '自らの子どもの言語習得を観察・分析しながら、音声学・音韻論の基礎を解説',
+                thought: '子育てって、大変だけど、楽しい！　子どもの「言い間違い」は「間違い」じゃない！',
+                amazonLink: 'https://www.amazon.co.jp/dp/425501275X'
+            },
+            {
+                year: 2022,
+                title: 'フリースタイル言語学',
+                publisher: '大和書房',
+                expertise: 3,
+                type: '🔍',
+                typeColor: '#60a5fa',
+                audience: '一般',
+                textbook: '—',
+                readability: '◎',
+                readingTime: '1時間',
+                topic: '言語学のあらゆるトピックをエッセイ形式で。とある方いわく、「著者の半生記」。',
+                thought: '言語学の世界を楽しく縦横無尽に走り回る！',
+                amazonLink: 'https://www.amazon.co.jp/dp/4479393897'
+            },
+            {
+                year: 2022,
+                title: '言語学者、外の世界へ羽ばたく',
+                publisher: '教養検定新書',
+                expertise: 5,
+                type: '📘',
+                typeColor: '#f472b6',
+                audience: '専門家',
+                textbook: '○',
+                readability: '△',
+                readingTime: '2時間',
+                topic: '言語学者がコロナ禍をどう生き抜いたか。けっこう専門的。',
+                thought: 'コロナ禍に言語学者として頑張ったこと',
+                amazonLink: 'https://www.amazon.co.jp/dp/4910292020'
+            },
+            {
+                year: 2018,
+                title: 'ビジュアル音声学',
+                publisher: '三省堂',
+                expertise: 5,
+                type: '📘',
+                typeColor: '#f472b6',
+                audience: '専門家',
+                textbook: '◎',
+                readability: '△',
+                readingTime: '5時間',
+                topic: 'がち音声学入門',
+                thought: '文系学生でもフーリエ変換（＝音響分析）が理解できるように！　調音・知覚についても網羅的に解説。',
+                amazonLink: 'https://www.amazon.co.jp/%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E9%9F%B3%E5%A3%B0%E5%AD%A6-%E5%B7%9D%E5%8E%9F-%E7%B9%81%E4%BA%BA/dp/4385365326'
+            },
+            {
+                year: 2015,
+                title: '音とことばのふしぎな世界',
+                publisher: '岩波科学ライブラリー',
+                expertise: 4,
+                type: '🔰',
+                typeColor: '#4ade80',
+                audience: '一般・大学生',
+                textbook: '◎',
+                readability: '○',
+                readingTime: '1時間',
+                topic: '処女作。音声学の各分野をさらっと概観',
+                thought: '音声学の各分野を紹介したい！',
+                amazonLink: 'https://www.amazon.co.jp/%E9%9F%B3%E3%81%A8%E3%81%93%E3%81%A8%E3%81%B0%E3%81%AE%E3%81%B5%E3%81%97%E3%81%8E%E3%81%AA%E4%B8%96%E7%95%8C-%E5%B2%A9%E6%B3%A2%E7%A7%91%E5%AD%A6%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BC-%E5%B7%9D%E5%8E%9F-%E7%B9%81%E4%BA%BA/dp/4000296442'
+            }
+        ];
+
+        let selectedBook = null;
+
+        function getStars(count) {
+            return '⭐'.repeat(count);
+        }
+
+        function getPublisherCategory(publisher) {
+            if (publisher.includes('新書') || publisher.includes('文庫')) return '新書・文庫';
+            if (publisher.includes('講談社') || publisher.includes('三省堂') || publisher.includes('東京書籍')) return '大手出版社';
+            if (publisher.includes('朝日') || publisher.includes('大和')) return '教育系出版社';
+            return 'その他';
+        }
+
+        function toggleBook(index) {
+            const detailsDiv = document.getElementById(`details-${index}`);
+            const arrowIcon = document.getElementById(`arrow-${index}`);
+            
+            if (selectedBook === index) {
+                // 閉じる
+                detailsDiv.style.display = 'none';
+                arrowIcon.style.transform = 'rotate(0deg)';
+                selectedBook = null;
+            } else {
+                // 他の開いているものを閉じる
+                if (selectedBook !== null) {
+                    const prevDetails = document.getElementById(`details-${selectedBook}`);
+                    const prevArrow = document.getElementById(`arrow-${selectedBook}`);
+                    if (prevDetails) prevDetails.style.display = 'none';
+                    if (prevArrow) prevArrow.style.transform = 'rotate(0deg)';
+                }
+                
+                // 新しいものを開く
+                detailsDiv.style.display = 'block';
+                detailsDiv.classList.add('slide-in');
+                arrowIcon.style.transform = 'rotate(180deg)';
+                selectedBook = index;
+            }
+        }
+
+        function renderPublishedBooks() {
+            const container = document.getElementById('published-books');
+            
+            publishedBooks.forEach((book, index) => {
+                const bookDiv = document.createElement('div');
+                bookDiv.className = 'bg-white rounded-xl shadow-md hover-shadow transition-all duration-300 cursor-pointer border-l-6';
+                bookDiv.style.borderLeftColor = book.typeColor;
+                bookDiv.onclick = () => toggleBook(index);
+                
+                bookDiv.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                            <div class="flex items-center space-x-4 mb-3 md:mb-0">
+                                <span class="text-3xl">${book.type}</span>
+                                <div>
+                                    <div class="text-lg font-bold text-gray-800">${book.year}年</div>
+                                    <div class="text-sm text-gray-500 font-medium">${book.publisher}</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                                    ${getPublisherCategory(book.publisher)}
+                                </span>
+                                <a href="${book.amazonLink}" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center px-3 py-1 bg-orange-500 hover:bg-orange-600 text-white text-xs font-medium rounded transition-colors"
+                                   onclick="event.stopPropagation()">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                    </svg>
+                                    詳細
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-xl md:text-2xl mb-4 text-gray-800 leading-tight">
+                            ${book.title}
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm mb-4">
+                            <div>
+                                <span class="font-medium text-gray-600">専門性（5＝専門的）:</span>
+                                <div class="text-lg">${book.expertise}/5 ${getStars(book.expertise)}</div>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-600">読みやすさ:</span>
+                                <div class="text-lg">${book.readability}</div>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-600">読了時間（目安）:</span>
+                                <div>${book.readingTime}</div>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-600">教科書:</span>
+                                <div class="text-lg">${book.textbook}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="font-medium text-gray-600 text-sm">対象読者:</span>
+                            <span class="ml-2 text-sm text-gray-700">${book.audience}</span>
+                        </div>
+                        
+                        <div id="details-${index}" class="space-y-4 border-t pt-4 mt-4" style="display: none;">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="text-sm font-medium text-gray-700 mb-2">📖 扱っているトピック:</div>
+                                <div class="text-sm italic text-gray-800">${book.topic}</div>
+                            </div>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <div class="text-sm font-medium text-blue-800 mb-2">💭 込めた想い:</div>
+                                <div class="text-sm font-bold text-blue-900 leading-relaxed">
+                                    ${book.thought}
+                                </div>
+                            </div>
+                            <div class="text-center pt-2">
+                                <a href="${book.amazonLink}" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors shadow-md">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                                        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+                                    </svg>
+                                    Amazonで詳細を見る
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="text-xs text-gray-500 mt-4 flex items-center">
+                            <svg id="arrow-${index}" class="w-4 h-4 mr-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                            クリックで詳細を表示
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(bookDiv);
+            });
+        }
+
+        // ページ読み込み時に既刊書籍を描画
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPublishedBooks();
+        });
+    </script>
+</body>
+</html>
