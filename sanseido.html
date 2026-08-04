@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三省堂（川原 2018) — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748;
+            --color-text-light: #5a6577;
+            --color-bg: #fafaf9;
+            --color-surface: #ffffff;
+            --color-accent: #4a6fa5;
+            --color-gold: #b89a4a;
+            --color-border: #d4cfc7;
+            --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header {
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+        }
+        .site-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+        .back-link {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            margin-top: 0.25rem;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        h2:first-child { margin-top: 0; }
+
+        .content-block {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .content-block li {
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            list-style: none;
+        }
+        .content-block li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+        .content-block ul { list-style: none; }
+
+        .content-block img.book-cover {
+            display: block;
+            max-width: 180px;
+            margin: 0 auto 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+        .content-block img.photo {
+            max-width: 280px;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        iframe, video {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+        audio { margin: 0.5rem 0; }
+
+        .paper-entry {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eeebe6;
+            font-size: 0.93rem;
+            line-height: 1.7;
+        }
+        .paper-entry:last-child { border-bottom: none; }
+
+        @media (max-width: 600px) {
+            .site-name { font-size: 1.5rem; }
+            h2 { font-size: 1.25rem; }
+            .content-block img.book-cover { max-width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+        <div class="back-link"><a href="paper_j.html">← 日本語著作一覧に戻る</a></div>
+    </div>
+</header>
+
+<main>
+
+    <h2>本ページについて</h2>
+    <div class="content-block">
+        三省堂から発売された『「ビジュアル音声学』の補足資料です。教育用・授業用であれば自由に使って頂いてかまいません。その場合、連絡は必要ありません。研究用に図などを引用する場合原典を明記して下さい。<BR>
+<BR>
+<img src="./visPhon/flyer_VisPhon1.jpg" class="photo" alt=""> 
+<img src="./visPhon/flyer_VisPhon2.jpg" class="photo" alt="">
+    </div>
+
+    <h2>（0）正誤表など</h2>
+    <div class="content-block">
+        <A HREF="./visPhon/visPhoneEratta.pdf" target="new">正誤表</A><BR>
+<BR>
+<A HREF="https://all-for-nothing.com/entry/2022/03/09/012450" target="new">図 3.2.3-2 の誤りについて</A><BR>
+<BR>
+<A HREF="https://all-for-nothing.com/entry/2022/05/25/153447" target="new">練習問題の解答例</A>（by 永月杏様。非公式であり、すべてを著者が確認したわけではありませんが、非常に丁寧に書かれております。）
+    </div>
+
+    <h2>（1）動画</h2>
+    <div class="content-block">
+        <BR>
+[b] in “bat” (2.2.2節）<BR><video src="./visPhon/bat.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[d] in “dirt” (2.2.2節）<BR><video src="./visPhon/dirt.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[dʒ] in “judge” (2.2.2節）<BR><video src="./visPhon/judge.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[ɡ] in “good morning” (2.2.2節）<BR><video src="./visPhon/good.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+"health" （追加）<BR><video src="./visPhon/health.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+"pitcher" （追加）<BR><video src="./visPhon/pitcher.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+"strength" （追加）<BR><video src="./visPhon/strength.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+"bonehead" （追加）<BR><video src="./visPhon/bonehead.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+
+EPG録音風景(2.2.4節）<BR><video src="./visPhon/EPGDemo.MOV" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+EPG録音風景(2.2.4節）<BR><video src="./visPhon/EPGDemo2.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+[b] in “bat” (2.3.2節）<BR><video src="./visPhon/bat.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[s] in “sitter” (2.3.2節）<BR><video src="./visPhon/sitter.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[m] in “milk” (2.3.2節）<BR><video src="./visPhon/milk.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[w] in “wood” (2.3.2節）<BR><video src="./visPhon/wood.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+[r] in “right” (巻き舌）(2.3.2節）<BR><video src="./visPhon/right.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[l] in “light” (2.3.2節）<BR><video src="./visPhon/light.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[r] in “run around” (2.3.2節）<BR><video src="./visPhon/run_around.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+
+英語の無声子音の帯気 (2.4.4節）<BR><video src="./visPhon/phaphapapa.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+声帯の動き（ハイスピードカメラ） (2.4.4節）<BR><video src="./visPhon/MW-eke.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+「あ」と「い」を比べてみよう(2.6.1節）<BR><video src="./hitsuji/ai.mpg" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+「あ」、「え」、「い」を比べる(2.6.1節）<BR><video src="./hitsuji/ei.mpg" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+「い」と「う」を比べる(2.6.1節）<BR><video src="./hitsuji/iu.mpg" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+[ɑ] in “hot” (2.6.4節）<BR><video src="./visPhon/hot.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[æ] in “bat” (2.6.4節）<BR><video src="./visPhon/bat.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[i] in “beet” (2.6.4節）<BR><video src="./visPhon/beet.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[u] in “boot” (2.6.4節）<BR><video src="./visPhon/boot.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[ə] in “pilaf” (2.6.4節）<BR><video src="./visPhon/pilaf.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+[i] in “beet” (2.6.4節）<BR><video src="./visPhon/beet.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[i] in “bit” (2.6.4節）<BR><video src="./visPhon/bit.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+[u] in “boot” (2.6.4節）<BR><video src="./visPhon/boot.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+[ʊ] in “foot” (2.6.4節）<BR><video src="./visPhon/foot.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+
+EMAセンサーの取り付け (2.7.1節）<BR><video src="./visPhon/EMASensorAttachment.mp4" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+EMAセンサーの動き (2.7.1節）<BR><video src="./visPhon/EMASensorIllustration.mp4" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+超音波動画 (2.7.2節）<BR><video src="./visPhon/ultrasound.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+
+濁音発声時の口腔の広がり（2.8.2節）<BR><video src="./hitsuji/abbbba.mpg" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+濁音発声時の喉頭（喉仏）の下降（節）<BR><video src="./visPhon/LarynxLowering.mpg" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+ベルヌーイ効果を実感する。速度が上がると圧力が下がります。この効果によって、空気が流れると自動的に声帯が閉じます。<BR><video src="./visPhon/BernoulliEffect.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+肺の仕組み<BR><video src="./hitsuji/lung_model.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+スリンキーによる疎密波のデモ(3.2.3節）<BR><video src="./visPhon/somitsu.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+
+波の重ね合わせの原理1(3.2.5節）<BR><video src="./visPhon/inphase.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+波の重ね合わせの原理2(3.2.5節）<BR><video src="./visPhon/outofphase.mov" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+空間の長さと共鳴する音の高さの相関（3.3.3節）<BR><video src="./hitsuji/shower.m4v" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p></video><BR>
+<BR>
+
+歯磨きで第二フォルマントを聞く（3.4.1節）<BR><video src="./hitsuji/brushing.mpg" width=320 height=240 controls><p>動画を再生するにはvideoタグをサポートしたブラウザでご覧ください。</p><BR></video><BR>
+<BR>
+    </div>
+
+    <h2>(2) 音声ファイル</h2>
+    <div class="content-block">
+        開放のない[t]（2.2.1節、コラム6）：<audio controls>
+ <source src="./visPhon/cat.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+ヒンズー語の歯音の"t"（2.2.4節）：<audio controls>
+ <source src="./visPhon/hindi_dental_t.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+ヒンズー語の反り舌音の"t"（2.2.4節）：<audio controls>
+ <source src="./visPhon/hindi_retroflex_t.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+[t]を含むEGG信号（2.4.2節）：<audio controls>
+ <source src="./visPhon/EGG_t.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+[d]を含むEGG信号（2.4.2節）：<audio controls>
+ <source src="./visPhon/EGG_d.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+英語の母音（2.6.3節）：<audio controls>
+ <source src="./visPhon/EnglishVowelSamples.mp3" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+[y]（円唇前舌母音）（2.6.1節）：<audio controls>
+ <source src="./visPhon/frontrounded.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+有声促音のEGG信号（2.8.2節）：<audio controls>
+ <source src="./visPhon/heddo_ch2.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+平板アクセント（2.9.2節）：<audio controls>
+ <source src="./visPhon/unaccented.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+頭高型（2.9.2節）：<audio controls>
+ <source src="./visPhon/initial.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+中高型（2.9.2節）：<audio controls>
+ <source src="./visPhon/medial.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+尾高型（2.9.2節）：<audio controls>
+ <source src="./visPhon/final.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+高音での「あ」（3.3.1節）：<audio controls>
+ <source src="./visPhon/a880.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+高音での「い」（3.3.1節）：<audio controls>
+ <source src="./visPhon/i880.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+数々の無声摩擦音（3.4.3節）：<audio controls>
+ <source src="./visPhon/fricatives.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+
+rice（3.4.7節）：<audio controls>
+ <source src="./visPhon/rice.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+lice（3.4.7節）：<audio controls>
+ <source src="./visPhon/lice.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+object (名詞)（3.4.10節）：<audio controls>
+ <source src="./visPhon/object_N.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+object (動詞)（3.4.10節）：<audio controls>
+ <source src="./visPhon/object_V.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+atom（3.4.10節）：<audio controls>
+ <source src="./visPhon/atom.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+
+
+atomic（3.4.10節）：<audio controls>
+ <source src="./visPhon/atomic.wav" type="audio/mpeg">
+ブラウザーでサポートされていません。
+</audio>
+<BR><BR>
+    </div>
+
+    <h2>(3) スクリプト</h2>
+    <div class="content-block">
+        <P>拡張子が.RのものはRのスクリプト、.PraatのものはPraatのスクリプトです。</P>
+
+<A HREF="./visPhon/SineWaves.R">様々な三角関数（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/Pascal_to_dB.R">PaをdBに変換（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/AddingTwoAndFourWaves.praat">二つの波を足す・4つの波を足す（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/combineFourSineWaves.praat">好きな4つの波を足す（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/AddingHarmonics.praat">倍音を足してみる（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/CreateSawToothWave.praat">のこぎり波を作る（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/CreateSquareWave.praat">矩形波を作る（3.2.2節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/OneTubeResonance.R">1管モデルの共鳴を求める（3.3.4節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/CalculateResonance2Tube.R">2管モデルの共鳴を求める（3.3.5節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/2TubeModel.R">2管モデルのシミュレーション（3.3.5節）</A><BR>
+<BR>
+
+<A HREF="./visPhon/ExpLog.R">指数関数・対数関数（3.2.2節）</A><BR>
+<BR>
+    </div>
+
+    <h2>(4) カラー図</h2>
+    <div class="content-block">
+        <img src="./visPhon/2.2.4-1(a).png" class="photo" alt=""> 図2.2.4-1(a)<BR>
+
+
+<img src="./visPhon/2.4.4-1.bmp" class="photo" alt=""> 図2.4.4-1<BR>
+
+<img src="./visPhon/2.4.4-2.png" class="photo" alt=""> 図2.4.4-2<BR>
+
+<img src="./visPhon/2.7.1-2.jpg" class="photo" alt=""> 図2.7.1-2<BR>
+
+<img src="./visPhon/2.7.1-3.png" class="photo" alt=""> 図2.7.1-3<BR>（本に載っている図はこの図を簡略化したものです。この図はJason Shaw氏の提供。）<BR>
+
+<img src="./visPhon/2.7.2-1.png" class="photo" alt=""> 図2.7.2-1<BR>
+
+<img src="./visPhon/2.7.2-2.png" class="photo" alt=""> 図2.7.2-2<BR>
+
+
+<img src="./visPhon/3.2.1-3.jpg" class="photo" alt=""> 図3.2.1-3<BR>
+
+<img src="./visPhon/3.4.1-1.png" class="photo" alt=""> 図3.4.1-1<BR>
+
+<img src="./visPhon/3.4.2-1.png" class="photo" alt=""> 図3.4.2-1<BR>
+
+<img src="./visPhon/3.4.3-1.png" class="photo" alt=""> 図3.4.3-1<BR>
+
+<img src="./visPhon/3.4.4-2.png" class="photo" alt=""> 図3.4.4-2<BR>
+    </div>
+
+    <h2>(5) 補足資料・補足練習問題</h2>
+    <div class="content-block">
+        <A HREF="./visPhon/SDT.xlsx">d-primeおよびcの計算用のxlsシート（4.5節）</A><BR>
+<BR>
+
+<img src="./visPhon/EGG_dEGG.png" class="photo" alt=""> <BR>
+EGG波形とそれを微分した波形。OQ (Open Quotient)=声帯が開いている割合。今川博先生提供。<BR>
+<BR>
+
+<img src="./visPhon/EGG_PGG.png" class="photo" alt=""> <BR>
+EGG波形、PGG波形、音響波形の相関。音響波形とEGG波形にずれが見られる。今川博先生提供。<BR>
+<BR>
+
+
+<img src="./visPhon/3.5.2-1.png" class="photo" alt=""> <BR>
+図3.2.5-1の成分波と合成はのy軸を揃えたもの。本書ではy軸を揃えると図3.5.2-2が分かりにくくなるので合成波のy軸の範囲を変えていた。<BR>
+<BR>
+
+<img src="./visPhon/3.5.2-2_ver2.jpg" class="photo" alt=""> <BR>
+図3.2.5-2の成分波と合成はのy軸を揃えたもの。少しわかりにくいかもしれないが、提示の仕方としてはこちらの方が正直かもしれない。<BR>
+<BR>
+
+<img src="./visPhon/NewSawtooth.jpg" class="photo" alt=""> <BR>
+図3.2.5-3(b)の直し。図図3.2.5-5(b)と向きが違っていて分かりにくかったのでここで訂正致します。（第2版で訂正）。<BR>
+<BR>
+
+<img src="./visPhon/VowelFormantJpn.png" class="photo" alt=""> <BR>
+日本語の母音のフォルマント散布図。プロの声優さんのデータをもとに計算したもの。<BR>
+    </div>
+
+    <h2>(6) 参考リンク集</h2>
+    <div class="content-block">
+        <A HREF="http://phonetics.linguistics.ucla.edu/sales/software.htm" target="new">UPSID</A><BR>
+<BR>
+
+<A HREF="http://web.phonetik.uni-frankfurt.de/upsid.html" target="new">UPSIDで検索</A><BR>
+<BR>
+
+<A HREF="http://pbase.phon.chass.ncsu.edu" target="new">P-Baseで検索</A><BR>
+<BR>
+
+<A HREF="https://itunes.apple.com/jp/app/id869642260?mt=8&ign-mpt=uo%3D4" target="new">iPAアプリ</A><BR>
+<BR>
+<A HREF="https://www.internationalphoneticassociation.org" target="new">international phonetic association</A><BR>
+<BR>
+<A HREF="http://westonruter.github.io/ipa-chart/keyboard/" target="new">IPA keyboard</A><BR>
+<BR>
+
+<A HREF="http://www.umin.ac.jp/memorial/rilp-tokyo/" target="new">IPA keyboard</A><BR>
+<BR>
+
+
+
+<A HREF="http://www.personal.uni-jena.de/~x1siad/uwxrmbdb.html" target="new">X線マイクロビームデータベース</A><BR>
+<BR>
+
+<A HREF="http://sail.usc.edu/span/rtmri_ipa/" target="new">the real-time MRI IPA charts</A><BR>
+<BR>
+
+
+
+<A HREF="http://fujimurainstitute.org/osamu/#video" target="new">Osamu Fujimuraを偲ぶEMA動画</A><BR>
+<BR>
+
+<A HREF="https://wp.nyu.edu/peplab/resources/" target="new">ニューヨーク大学の言語学科による超音波研究の紹介</A><BR>
+<BR>
+
+
+<A HREF="http://www.fon.hum.uva.nl/praat/" target="new">Praat Download（第4章）</A><BR>
+<BR>
+<A HREF="https://www.youtube.com/playlist?list=PLdrzcCNXDQp2adn4v7sLJNxa1hYJ33e-A" target="new">著者によるPraatの使い方解説動画</A><BR>
+<BR>
+<A HREF="http://www.wakariyasui.sakura.ne.jp/p/wave/hadou/yokotate.html" target="new">分かりやすい高校物理の部屋（縦波と横波）</A><BR>
+<BR>
+
+<A HREF="https://www.iso.org/standard/34222.html" target="new">等ラウドネス曲線</A><BR>
+<BR>
+
+<A HREF="http://eman-physics.net/web_app/fourier/fourier.html" target="new">フーリエ変換体験ウェブアプリ</A><BR>
+<BR>
+
+<A HREF="http://splab.net" target="new">上智大学荒井先生のサイト</A><BR>
+<BR>
+
+<A HREF="http://sal.arizona.edu/node/24" target="new">TubeTalker</A><BR>
+<BR>
+
+<A HREF="https://drive.google.com/drive/folders/1-Te5DhQ6NApJoDXJOePR5c_HUOBLJsec" target="new">Voice Quality Supplementary Materials</A><BR>
+<BR>
+
+<A HREF="https://home.cc.umanitoba.ca/~robh/" target="new">スペクトログラム読解クイズ</A><BR>
+<BR>
+
+
+<A HREF="https://www.youtube.com/watch?v=jtsfidRq2tw" target="new">マガーク効果デモ1</A><BR>
+<BR>
+
+<A HREF="https://www.youtube.com/watch?v=XSjOXyutkCM" target="new">マガーク効果デモ2</A><BR>
+<BR>
+
+
+
+<A HREF="http://db3.ninjal.ac.jp/publication_db/item.php?id=100170101" target="new">日本語の母音，子音，音節：調音運動の実験音声学的研究</A><BR>
+<BR>
+
+
+
+<A HREF="https://buckeyecorpus.osu.edu" target="new">Buckeye Corpus</A><BR>
+<BR>
+
+<A HREF="http://pj.ninjal.ac.jp/corpus_center/csj/" target="new">日本語話し言葉コーパス</A><BR>
+<BR>
+
+
+
+<A HREF="https://www.ninjal.ac.jp/database/type/corpora/" target="new">日本語コーパスのまとめ</A><BR>
+<BR>
+    </div>
+
+    <h2>(7) 英語専門用語訳集</h2>
+    <div class="content-block">
+        <A HREF="./visPhon/index.xlsx" target="new">英語専門用語訳集（ページ番号つき）</A><BR>
+<BR>
+<A HREF="./visPhon/index.pdf" target="new">英語専門用語訳集（PDF）</A><BR>
+<BR>
+    </div>
+
+</main>
+
+</body>
+</html>
