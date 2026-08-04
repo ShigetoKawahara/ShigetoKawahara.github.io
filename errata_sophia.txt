@@ -1,0 +1,17 @@
+***Fixed in the version available on the web***
+
+p6. "the log of O/E ratios smaller than *e are* negative" => "the log of O/E ratios smaller than *1 is* negative" (since a^0=1, log(1)=0).
+
+p7. "by a sign-test" => "by a binomial test"
+
+Also, the description of the stats there is right but it is too simplified. What we want to calculate is the same as the probability of getting "tail" 6 times of out of 6 trials of coin toss, assuming H0: p=.05. This probability can be calculated as:
+
+nCr*p*q (where nCr=the number of combinations of choosing r out of n; p=0.5; q=1-0.5=0.5)
+
+Therefore:
+
+nCr*p*q = 6C6*p^6*(1-p)^(6-6) 
+
+Since 6C6 = 1 (there is one way to choose 6 elements from the pool of 6 elements), and (1-p)^(6-6)=0.5^0=1,
+
+nCr*p*q = 6C6*p^6*(1-p)^(6-6) = p^6=0.5^6<.05

@@ -1,0 +1,27 @@
+Errata for "Half rhymes in Japanese rap lyrics and knowledge of similarity". Journal of East Asian Linguistics 16.2: 113-144.
+
+Section 2.2. (p118)
+
+...10,112 consonantal pairs => ...10,112 consonants.
+
+E(x, y) = P(x) * P(y) * N (where N is the total number of pairs).  => E(x, y) = P(x) * P(y) * N (where N is the total number of consonants).
+
+counts from the 20,224 => counts from the 10,112
+
+p.124, last paragraph
+
+The idea behind the analysis is really based on a binomial test, not a sign test, as the text says. What we want to calculate is the same as the probability of getting "tail" 6 times of out of 6 trials of coin toss, assuming H0: p=.05. This probability can be calculated as:
+
+nCr*p*q (where nCr=the number of combinations of choosing r out of n; p=0.5; q=1-0.5=0.5)
+
+Therefore:
+
+nCr*p*q = 6C6*p^6*(1-p)^(6-6) 
+
+Since 6C6 = 1 (there is one way to choose 6 elements from the pool of 6 elements), and (1-p)^(6-6)=0.5^0=1,
+
+nCr*p*q = 6C6*p^6*(1-p)^(6-6) = p^6=0.5^6<.05
+
+Section 4.1
+
+The text assumes that [kj] shares four feature specifications with [tʃ] and three feature specifications with [dʒ]. It instead shares five and four feature specifications, respectively. The argument still holds because the average O/E ratios for such pairs are 1.20 and 1.05. 
