@@ -1,0 +1,62 @@
+# use strict;
+
+my %count=();
+my %consonant1 = ();
+my %consonant2 = ();
+
+open FILE, $ARGV[0] || die "can't open the file ($ARGV[0]): $!\n";
+
+while (my $line=<FILE>){
+  chomp $line;
+  next if (!$line || $line =~/^\#/);
+  my ($word1,$word2)=split / /, $line;
+
+  if (length($word1)!=length($word2)){
+    print STDERR "$word1 is not the same length as $word2\n";
+    next;  
+  }
+
+   my @letters1=split //, $word1;
+   my @letters2=split //, $word2;
+
+   #print (join (" ", @letters1),"\n");
+   #print (join (" ", @letters2),"\n");
+
+   foreach my $i(0..scalar(@letters1)/2-1){
+     #print ($letters1[$i*2]); 
+     #print ($letters2[$i*2],"\n");    
+
+     my $pair=$letters1[$i*2]. $letters2[$i*2];
+     $count{$pair}+=1;
+     $consonant1{$letters1[$i*2]}=1;
+     $consonant2{$letters2[$i*2]}=1;
+   }
+   #print ("\n");
+
+   
+}
+close FILE;
+
+foreach my $pair (sort keys %count){
+ # print (join (" ",$pair,$count{$pair}),"\n");
+}
+my $row=" |";
+foreach my $c2 (sort keys %consonant2){
+  $row.="   ".$c2;
+}
+print($row,"\n");
+foreach my $c1 (sort keys %consonant1){
+  my $row=$c1."|";   
+  foreach my $c2 (sort keys %consonant2){
+    my $pair=$c1.$c2;
+    my $freq=(defined $count{$pair}) ? $count{$pair} : 0;
+    $row.=" ".sprintf("%3d",$freq);
+  }
+
+  print($row,"\n");
+
+}
+
+
+
+ 
