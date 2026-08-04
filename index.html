@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-text: #2d3748;
+            --color-text-light: #5a6577;
+            --color-bg: #fafaf9;
+            --color-surface: #ffffff;
+            --color-accent: #4a6fa5;
+            --color-accent-hover: #3b5a87;
+            --color-gold: #b89a4a;
+            --color-border: #d4cfc7;
+            --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .site-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            letter-spacing: 0.01em;
+        }
+
+        .site-name span {
+            color: var(--color-gold);
+            font-weight: 400;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* ── Main Content ── */
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* ── About Section ── */
+        .about {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-photo {
+            width: 180px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(10%);
+        }
+
+        .contact-block {
+            background: var(--color-section-bg);
+            border-left: 3px solid var(--color-gold);
+            padding: 1rem 1.25rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+
+        .contact-block a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .contact-block a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Section Headings ── */
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        /* ── Affiliation List ── */
+        .affiliation-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .affiliations {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .affiliations li {
+            padding: 0.35rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .affiliations li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .affiliations a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .affiliations a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Research Interests ── */
+        .interests {
+            list-style: none;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .interests li {
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            break-inside: avoid;
+            font-size: 0.95rem;
+        }
+
+        .interests li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        /* ── Projects ── */
+        .projects {
+            list-style: none;
+        }
+
+        .projects li {
+            padding: 0.5rem 0;
+            padding-left: 1rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .projects li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.95rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .projects a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .projects a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Fun Facts (Erdős / Bacon) ── */
+        .fun-facts {
+            background: var(--color-section-bg);
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        .fun-facts strong {
+            color: var(--color-text);
+        }
+
+        .fun-facts a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .fun-facts a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer Image ── */
+        .footer-image {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-image img {
+            max-width: 360px;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            opacity: 0.85;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .site-name {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.82rem;
+            }
+
+            .about {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: left;
+            }
+
+            .about-photo {
+                width: 140px;
+            }
+
+            .interests {
+                columns: 1;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="site-name">Shigeto Kawahara</div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <div class="contact-block">
+        2-15-45 Mita, Minato-ku, Tokyo 108-8345, Japan<br>
+        Phone: +81-3-5427-1595<br>
+        執筆・取材・メディア出演などの依頼: <a href="mailto:kawaharashigeto.info@gmail.com">kawaharashigeto.info@gmail.com</a>（マネージャー田中）
+    </div>
+
+    <h2>About Me</h2>
+
+    <div class="about">
+        <div class="about-text">
+            <p class="affiliation-label">Current Academic Affiliations &amp; Positions</p>
+            <ul class="affiliations">
+                <li>Professor, <a href="http://www.icl.keio.ac.jp" target="_blank">The Institute of Cultural and Linguistic Studies</a>, <a href="http://www.keio.ac.jp/index-jp.html" target="_blank">Keio University</a></li>
+                <li>Associate Editor, <a href="https://www.cambridge.org/core/journals/phonology" target="_blank">Phonology</a> (Cambridge Univ. Press)</li>
+                <li>Editorial Board, <a href="http://www.karger.com/Journal/Home/224275" target="_blank">Phonetica</a></li>
+                <li>Editorial Board, <a href="http://www.springer.com/education+%26+language/linguistics/journal/11049" target="_blank">Natural Language and Linguistic Theory</a></li>
+                <li>Editorial Board, <a href="https://phondata.org/index.php/pda" target="_blank">Phonological Data and Analysis</a></li>
+                <li>Founding &amp; Current Board Member, <a href="https://iculinguistics.wordpress.com" target="_blank">ICU Linguistics</a></li>
+            </ul>
+
+            <div class="fun-facts">
+                <strong><a href="https://en.wikipedia.org/wiki/Erdős_number" target="_blank">Erdős Number</a>: 4</strong><br>
+                Kawahara → Kingston → Nichols → Warnow → Erdős<br><br>
+                <strong><a href="https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon#Bacon_numbers" target="_blank">Bacon Number</a>: 3</strong><br>
+                Kawahara → Mone Kamishiraishi → Alan Menken → Kevin Bacon
+            </div>
+        </div>
+
+        <div class="about-photo">
+            <img src="Shigeto7.jpg" alt="Shigeto Kawahara">
+        </div>
+    </div>
+
+    <h2>Research Interests</h2>
+    <ul class="interests">
+        <li>Sound symbolism and its relation to theoretical phonology</li>
+        <li>Probabilistic phonology, MaxEnt and quantitative models</li>
+        <li>Phonetics and its application to singing</li>
+        <li>Bayesian statistics for linguistic analyses</li>
+        <li>Open science and replication practices in linguistics</li>
+        <li>Phonetics and phonology of voicing and geminates</li>
+        <li>The interplay between phonetics and phonology</li>
+        <li>Phonological data quality and judgment experiments</li>
+        <li>Speech perception and its relation to phonology</li>
+        <li>Accent and intonation</li>
+    </ul>
+
+    <h2>Current &amp; Recent Projects</h2>
+    <ul class="projects">
+        <li><a href="https://ling.auf.net/lingbuzz/005843" target="_blank">Pokémonastics</a></li>
+        <li>Lingual articulation of devoiced vowels and geminates with EMA (with <a href="https://sites.google.com/cornell.edu/francescoburroni/" target="_blank">Francesco Burroni</a>, <a href="http://campuspress.yale.edu/jasonshaw/" target="_blank">Jason Shaw</a>, and Lia Saki Bucar Shigemori)</li>
+        <li>Learning about Bayesian analyses, open science initiative, and replication in linguistic research</li>
+        <li>Information theory for phonological and phonetic analyses (with <a href="http://campuspress.yale.edu/jasonshaw/" target="_blank">Jason Shaw</a> and <a href="http://www.arts.canterbury.ac.nz/linguistics/people/hume.shtml" target="_blank">Beth Hume</a>)</li>
+        <li>Finite Element Method for 3-D vocal tract airflow analysis (with <a href="https://sites.google.com/site/mutsukawahara/papers" target="_blank">Mutsuto Kawahara</a> and <a href="http://www.rccm.co.jp" target="_blank">RCCM</a>)</li>
+        <li>Sound symbolism (with <a href="http://www.tuat.ac.jp/~shino/Home.html" target="_blank">Kazuko Shinohara</a> and others)</li>
+        <li>Phonological judgment experiments</li>
+        <li>Duration patterns</li>
+        <li>Phonetics and phonology of geminate devoicing in Japanese</li>
+        <li>Rendaku and Lyman's Law from various perspectives</li>
+        <li>Articulatory correlates of metrical phrasing in English and Japanese (with <a href="https://sites.google.com/site/ericksondonna2000/home" target="_blank">Donna Erickson</a>)</li>
+        <li>Phonetics of Japanese via EMA (with <a href="https://sites.google.com/site/ericksondonna2000/home" target="_blank">Donna Erickson</a> and <a href="https://research-er.jp/researchers/view/430424" target="_blank">Atsuo Suemitsu</a>)</li>
+        <li>Accent and intonation in East Asian languages (with <a href="http://cpctl3.cityu.edu.hk/~yurihara/profile/" target="_blank">Yurie Hara</a>)</li>
+        <li>Japanese puns: experimental and corpus-based approach (with <a href="http://www.tuat.ac.jp/~shino/Home.html" target="_blank">Kazuko Shinohara</a>)</li>
+        <li>Linguistic knowledge and speech perception (with <a href="https://blogs.umass.edu/jkingstn" target="_blank">John Kingston</a>)</li>
+        <li>Other projects that students are interested in</li>
+    </ul>
+
+    <div class="footer-image">
+        <img src="singingbowl.jpg" alt="Singing bowl">
+    </div>
+
+</main>
+
+</body>
+</html>

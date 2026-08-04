@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748;
+            --color-text-light: #5a6577;
+            --color-bg: #fafaf9;
+            --color-surface: #ffffff;
+            --color-accent: #4a6fa5;
+            --color-gold: #b89a4a;
+            --color-border: #d4cfc7;
+            --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header {
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+        }
+        .site-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a {
+            display: block;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 6rem;
+        }
+        h2:first-child { margin-top: 0; }
+
+        .content-block {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .content-block li, .item-list li {
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            list-style: none;
+        }
+        .content-block li::before, .item-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .paper-entry {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eeebe6;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            overflow: hidden;
+        }
+        .paper-entry:last-child { border-bottom: none; }
+
+        .paper-entry img.book-cover, .content-block img.book-cover {
+            float: left;
+            width: 110px;
+            margin: 0.25rem 1rem 0.75rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-block img.photo {
+            width: 250px;
+            border-radius: 6px;
+            margin: 0.5rem 0.75rem 0.75rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 1rem 0;
+        }
+        .photo-grid img {
+            width: 200px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px dashed var(--color-gold);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .highlight-box h3 {
+            color: #92400e;
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box a {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .contact-block {
+            background: var(--color-section-bg);
+            border-left: 3px solid var(--color-gold);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .institution { font-weight: 600; color: var(--color-text); margin-top: 1rem; }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .site-name { font-size: 1.5rem; }
+            nav a { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+            h2 { font-size: 1.25rem; }
+            .paper-entry img.book-cover, .content-block img.book-cover { width: 80px; }
+            .content-block img.photo { width: 180px; }
+            .photo-grid img { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html"  class="active">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2 id="scripts">Scripts</h2>
+    <div class="content-block">
+        <li><A HREF="./scripts/rap.prl">Contingency table maker</A> This perl script takes a list of consonant pairs and creates a co-occurrence table. <BR>
+<BR>
+
+<li><A HREF="./pdf/PraatScriptingDummies.pdf"> Praat scripting for dummies</A> Well, this handout provides step-by-step instructions for Praat scripting.<BR>
+<BR>
+
+<li><A HREF="./scripts/AddNoise.praat">Add noise</A> This praat script superimposes a noise file onto all sounds in a specified folder. <BR>
+<BR>
+
+
+<li><A HREF="./scripts/CombineAllSounds.praat">Add sounds</A> This praat script combines (not concatenates) all the sound files in a folder. <BR>
+<BR>
+
+<li><A HREF="./scripts/ConcatTwoFiles.praat">Concatenate two sounds</A> This praat script creates binary pairs of all the sound files in a folder. Should be useful for 2AFC experiments. The ISI can be manually specified.<BR>
+<BR>
+
+<li><A HREF="./scripts/text_grid_maker.praat">Annotation helper</A> This praat script opens a sound file in a folder, creates a textgrid tier for you, waits until you're done labeling, and once you hit "Complete" button, it saves the textgrid file, and opens a new file and loops until you're done. <BR>
+<BR>
+
+<li><A HREF="./scripts/text_grid_checker.praat">Annotation checker</A> This praat will help you to check all the annotation files in the specified folder. <BR>
+<BR>
+
+<li><A HREF="./scripts/ExtractIntervals.praat">Extract intervals</A> This script extracts all the sound intervals with an interval name on the annotation tier. <BR>
+<BR>
+
+<li><A HREF="./scripts/word_count.praat">Word count</A> This script counts the number of labels (e.g. frequencies of particular words) in all annotation files in a folder. Originally written to analyze Corpus of Spoken Japanese, but can be used for any other corpus annotated by Praat. <BR>
+<BR>
+
+<li><A HREF="./scripts/equalize_amp_dB.praat">Equalizing amplitude (dB)</A> This praat script adjusts the average amplitude (in dB) of all files in a folder. <BR>
+<BR>
+
+<li><A HREF="./scripts/equalize_amp.praat">Scale peak</A> This praat script scales peak of all files in a folder. <BR>
+<BR>
+
+<li><A HREF="./scripts/duration_adjustment.praat">Equalize duration</A> This praat script adjusts the duration of all files to a specified value.<BR>
+<BR>
+
+<li><A HREF="./scripts/CombineAllSoundsVer2.praat">Combine all sounds</A> This praat script combines (not concatenates) all sound files in a directory. Use it to create multi-speaker noise.<BR>
+<BR>
+
+<li><A HREF="./scripts/changeF0_e.praat">Change F0</A> This praat script raises/lowers the whole pitch contour by the specified factor for all the files.<BR>
+<BR>
+
+<li><A HREF="./scripts/zerocrossing.praat">Adjust to nearest zero crossing</A> This praat script adjusts the beginning and the end of all files to nearest zero-crossings. <BR>
+<BR>
+
+<li><A HREF="./scripts/mono_converter.praat">Mono converter</A> This praat script converts all stereo sounds into mono sounds. <BR>
+<BR>
+
+<li><A HREF="./scripts/duration_getter.praat">get duration</A> This praat script takes all the textgrid files in a folder and gets duration of all labelled intervals. (This is based on the script that Mietta Lennes originally wrote.) <BR>
+<BR>
+
+<li><A HREF="./scripts/get_F0_Min_Max.praat">get F0 min max</A> This praat script takes all the files in a folder, and for all intervals, it takes the F0 maximum, and F0 minimum preceding the maximum and following the maximum. (This is based on the script that Matsuura Toshio originally wrote.) <BR>
+<BR>
+
+<li><A HREF="./scripts/get_intensity_minmax.praat">get intensity min max</A> This praat script takes all the files in a folder, and for all intervals, it takes the average intensity, minimal intensity, its time, maximal intensity and its time. <BR>
+<BR>
+
+<li><A HREF="./scripts/get_formants.praat">get F1, F2, F3 (averages)</A> This praat script takes all the files in a folder, and for all intervals, it calculates the average F1, F2 and F3. <BR>
+<BR>
+
+<li><A HREF="./scripts/get_formants_midpoint.praat">get F1, F2, F3 (midpoints)</A> This praat script takes all the files in a folder, and for all intervals, it calculates the F1, F2 and F3 at their midpoints. <BR>
+<BR>
+
+<li><A HREF="./scripts/get_F0F1Dur.praat">get F0, F1 and duration</A> This script is intended to help an acoustic analysis of a voicing contrast. Specifically, for each interval (for all the files in the folder), it calculates F0 and F1 at both edges and its duration. <BR>
+<BR>
+
+<li><A HREF="./scripts/attach_suffix.praat">suffixation</A> This script combines one suffix sound file (say your context or burst) at the end of all other files in the folder (say your continuum or closure).<br><br>
+
+<li><A HREF="./myvoice/RemoveNoise.praat">Remove noise</A> This script removes noise. Please read Praat's help for specific details.
+    </div>
+
+    <h2 id="a-database-of-sonorantal-words">A database of sonorantal words in Japanese</h2>
+    <div class="content-block">
+        Everybody who trys to make up sentences for an experiment designed to look at intonational patterns faces a challenge: we need to use words that have lots of sonorants in them. Obstruents disrupt intonational patterns, so they should be avoided as much as possible. Building on my projects with UMass colleagues, I have complied a database for Japanese words in which the first two syllables are all sonorants. They are sorted by accentedness, solely judged by my intuition (I am a native speaker of Tokyo Japanese). <BR>
+<BR>
+The placement of accents has been judged by me, a native speaker of Tokyo Japanese, but please do check with your speakers before recording. Please report any mistakes or unnotated variability in accent placements. You're of course always welcome to contribute to this database.<BR>
+<BR>
+<A HREF="./pdf/sd.pdf">Nouns</A>, <A HREF="./pdf/sdv.pdf"> Verbs </A>
+<br><br>
+    </div>
+
+    <h2 id="yamato-consonant-co-occurrence">Yamato consonant co-occurrence restrictions</h2>
+    <div class="content-block">
+        Consonant co-occurrence restrictions in Yamato (native) Japanese. The data are partly published in Kawahara, Ono, Sudo (2006) Consonant co-occurrence restrictions in Yamato Japanese. <I> Japanese/Korean Linguistics</I> 14: 27-38. Stanford: CSLI Publications. Click <A HREF="yamato.htm" BASE TARGET="new">here</A> for more comprehensive data. 
+<br><br>
+    </div>
+
+</main>
+
+</body>
+</html>

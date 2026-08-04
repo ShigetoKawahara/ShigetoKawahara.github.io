@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748;
+            --color-text-light: #5a6577;
+            --color-bg: #fafaf9;
+            --color-surface: #ffffff;
+            --color-accent: #4a6fa5;
+            --color-gold: #b89a4a;
+            --color-border: #d4cfc7;
+            --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header {
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+        }
+        .site-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a {
+            display: block;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 6rem;
+        }
+        h2:first-child { margin-top: 0; }
+
+        .content-block {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .content-block li, .item-list li {
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            list-style: none;
+        }
+        .content-block li::before, .item-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .paper-entry {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eeebe6;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            overflow: hidden;
+        }
+        .paper-entry:last-child { border-bottom: none; }
+
+        .paper-entry img.book-cover, .content-block img.book-cover {
+            float: left;
+            width: 110px;
+            margin: 0.25rem 1rem 0.75rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-block img.photo {
+            width: 250px;
+            border-radius: 6px;
+            margin: 0.5rem 0.75rem 0.75rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 1rem 0;
+        }
+        .photo-grid img {
+            width: 200px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px dashed var(--color-gold);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .highlight-box h3 {
+            color: #92400e;
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box a {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .contact-block {
+            background: var(--color-section-bg);
+            border-left: 3px solid var(--color-gold);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .institution { font-weight: 600; color: var(--color-text); margin-top: 1rem; }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .site-name { font-size: 1.5rem; }
+            nav a { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+            h2 { font-size: 1.25rem; }
+            .paper-entry img.book-cover, .content-block img.book-cover { width: 80px; }
+            .content-block img.photo { width: 180px; }
+            .photo-grid img { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html"  class="active">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2 id="research-skills-to-survive-you">Research skills to survive your graduate life</h2>
+    <div class="content-block">
+        Some handouts on research skills in linguistics:<BR>
+<BR>
+
+<li> Kawahara, Shigeto<A HREF="./pdf/FindingTopics.pdf"> How to find research topics</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/writing.pdf"> Some tips for writing</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/poster.pdf"> Creating a poster</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/abstract.pdf"> How to write a good conference abstract</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/review.pdf"> How to write and handle journal reviews</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/writing_CV.pdf"> Preparing your CV</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/job.pdf"> Being on a job market</A>
+
+<BR><BR>
+
+Handouts on Praat:
+
+<li> Kawahara, Shigeto<A HREF="./pdf/praat_Kawahara.pdf"> A brief introduction to Praat</A>
+<li> Kawahara, Shigeto<A HREF="./pdf/PraatScriptingDummies.pdf"> Praat scripting for dummies</A>
+<br><br>
+
+Other slides:
+
+<li>Kawahara, Shigeto <A HREF="./pdf/ExperimentalSyntax.pdf" target="new">Introspect or not: Invitation to experimental syntax</A>. <BR>
+<li>Kawahara, Shigeto <A HREF="./pdf/MultiVoicingKawahara.pdf">強調形に現れる促音と有声性 (or How do you make a voicing distinction when the constriction is soooooooooo long?)</A>. [In English]. 音声学会ワークショップ, Sept 2014． <BR>
+<BR>
+    </div>
+
+    <h2 id="">音声学教育</h2>
+    <div class="content-block">
+        「音声学は数学とか色々絡んでくるから難しい！」っていう文句を真摯に受け止め、いかに学生に音声学を教えると効果的か探求しています:<BR>
+<BR>
+
+
+
+<li> <B>川原繁人</B>  (2018)  <A HREF="https://www.amazon.co.jp/dp/4385365326" target="new">『ビジュアル音声学』. 東京: 三省堂.<BR>
+
+
+<li> <B>川原繁人</B>  (2017) <A HREF="https://www.amazon.co.jp/「あ」は「い」より大きい-—音象徴で学ぶ音声学入門-川原繁人/dp/4894768860/" target="new"> 『「あ」は「い」より大きい!?:音象徴で学ぶ音声学入門』</A>. 東京: ひつじ書房.<BR>
+
+<li> <A HREF="http://www.iwanami.co.jp/.BOOKS/02/2/0296440.html" target="new">川原繁人 (2015) 「音とことばのふしぎな世界」. 岩波サイエンスライブラリー 244. 東京 : 岩波書店. </A><BR>
+<BR>
+
+<li><B> Kawahara, Shigeto</B>, Atsushi Noto, and Gakuji Kumagai (2018) <A HREF="./pdf/PokemonPhoneticaPublished.pdf" target="new"> Sound symbolic patterns in Pokémon names.</A> <I>Phonetica</I> 75(3): 219-244. (This paper is Open Access.)<BR>
+<BR>
+<li><B> Kawahara, Shigeto</B> and Gakuji Kumagai (in press, 2019?) <A HREF="./pdf/PokemonExperimentRevised.pdf" target="new">Expressing Evolution in Pokémon Names: Experimental Explorations</A>. <I>Journal of Japanese Linguistics</I>.<BR>
+<BR>
+<li>熊谷学而・川原繁人 (to appear) <A HREF="./pdf/Pokemon3.pdf" target="new">ポケモン名付けにおける母音と有声阻害音効果: 実験と理論からアプローチ</A>.　言語研究.<BR>
+<BR>
+<li><B>川原繁人</B> (2017) <A HREF="./pdf/21-2_川原_p.38.pdf" target="new">ドラゴンクエストの呪文における音象徴: 音声学の広がりを目指して</A>.　音声研究 21(2): 38-42. <BR>
+<BR>
+<li><B>川原繁人</B>・桃生朋子 (2017) <A HREF="./pdf/21-2_桃生_p.43.pdf" target="new">音象徴の言語学教育での有効利用に向けて: 『ウルトラマン』の怪獣名と音象徴</A>. 音声研究 21(2): 43-49.<BR>
+<BR>
+<li><B>川原繁人</B>・桃生朋子 (2018) <A HREF="./pdf/沖縄川原桃生.pdf" target="new">音象徴で言語学を教える: 具体的成果の紹介を通して</A>. <I> Southern Review</I> 32: 3-14.<BR>
+<BR>
+
+<li> 川原繁人 (2016) <A HREF="./pdf/中大JMAC川原.pdf" target="new">日本やアメリカにおける音声学教育</A>. JMAC技術講演会予稿集.
+<li> 川原繁人 (2016) <A HREF="./pdf/2016JMAC_文集(フォーマット)_川原.pdf" target="new">日本やアメリカにおける音声学教育 (スライド)</A>.
+<li><B> 川原繁人</B>・桃生朋子・皆川泰代 (2016) <A HREF="./pdf/マイボイス音声研究_最終稿.pdf" target="new">マイボイスと大学における音声学教育</A>. 音声研究 20(3): 13-20.
+
+
+
+<BR><BR>
+I generally enjoy working with a student, both at undergraduate and graduate level. Sometimes they help a project of mine; sometimes I help them develop their project. Students that I published a paper with or I presented a conference talk with include (perhaps non-exhaustive):<BR>
+<BR>
+Alex Kilpatrick (University of Melborne, grad), Stacey Sherwood (U. of Sydney, grad), Saeka Miyahara (Keio, undergrad), Rei Masuda (Keio, undergrad), Chika Takahashi (Keio, undergraduate), Nozomi Endo (Keio, undergraduate), Jeff Moore (Sophia, graduate), James Whang (NYU, graduate), Kelly Garvey (Rutgers, undergraduate), Aaron Braver (Rutgers, graduate), Sang-Im Lee-Kim (NYU, graduate), Hanako Masada (Sophia, graduate), Sophia Kao (Rutgers, undergraduate), Melanie Pangilinan (Rutgers, undergraduate), Lara Greenberg (Rutgers, undergraduate), Natalie Dresher (Rutgers, undergraduate), Sara Korostoff (Rutgers, undergraduate), Chris Kish (Rutgers, undergraduate), Yumi Uchimoto (Tokyo University of Agriculture and Technology, undergraduate), Nobuhiro Yoshida  (Tokyo University of Agriculture and Technology, undergraduate), Gakuji Kumagai (Tokyo Metropolitan University, PD), Atsushi Noto (Tokyo Metropolitan University, graduate), Mayuki Matsui (NINJAL, PD), Hanna Kaji (ICU), Haruka Tada (ICU).
+    </div>
+
+    <h2 id="undergraduate-teaching">Undergraduate teaching</h2>
+    <div class="content-block">
+        <li> A summary <A HREF="http://www.rci.rutgers.edu/~phonetic/SpeechPathPage/SpeechPath.html" target="new">page </A> listing resources for graduation school applications (speech pathology schools).<BR>
+<BR>
+<li> Here is a guide for <A HREF="./pdf/ApplyingGrad.pdf"> applying for graduate schools</A><BR>
+<BR>
+<li> Here is a guide for <A HREF="./pdf/SpeechPathology.pdf"> Preparing for speech pathology schools (while you're at Rutgers.)</A><BR>
+<BR>
+<li> If you're a Rutgers student and interested in pursuing a speech pathology-related career, we now have <A HREF="https://www.facebook.com/groups/213474645350817/" target="new">a facebook group</A>.<BR>
+<BR>
+    </div>
+
+    <h2 id="undergraduate-advising">Undergraduate advising</h2>
+    <div class="content-block">
+        <img src="./image/kawahara_garvey.jpg" class="book-cover" alt="Book cover">
+<img src="./image/kawahara_greenberg.jpg" class="book-cover" alt="Book cover"><BR>
+<BR>
+
+At the Rutgers phonetics lab, of which I was the director for a while, many undergraduate students worked on projects with our lab members. Here are some results of their efforts.  <BR>
+<BR>
+<li> Aresty poster (2013) by Natalie Dresher et al. on <A HREF="./pdf/DresherEtAl.pdf"> The phonetics of emphatic vowel lengthening in English</A>.
+<li> National Conference on Undergraduate Research (2013) by Michelle Marron on <A HREF="./pdf/Marron2013.pdf"> The effect of sound symbolism on gender cues for new brand names</A>.
+<li> Cornell Undergrad Conf. (2012) by Chris Kish et al on <A HREF="./pdf/Cornell2012.pdf"> why obstruents would imply masculinity</A>.
+<li> Aresty poster (2012) by Chris Kish et al on <A HREF="./pdf/Aresty2012KishEtAl.pdf"> the sound symbolism in English names</A>.
+<li> WCCFL poster (2011) by Kelly Garvey on <A HREF="./pdf/KellyWCCFL2011.pdf"> perceptibility of place contrasts</A>.
+<li> PCL slides (2011) by Kelly Garvey on <A HREF="./pdf/KellyPLC2011.pdf"> perceptibility of place contrasts</A>.
+<li> Aresty poster (2011) by Audrey Krum et al on <A HREF="./pdf/AudreyEtAl2011Aresty.pdf"> the perception of duration</A>.
+<li> FAJL slides (2010) by Sophia Kao 2010 on <A HREF="./pdf/zu_FAJL2010.pdf">Japanese accents</A>. 
+<li> Aresty poster (2010) by Natalie Blanc et al. on <A HREF="./pdf/Aresty2010_French.pdf">French intonation</A>.
+<li> Aresty poster (2010) by Kelly Garvey on <A HREF="./pdf/Aresty2010_pmap.pdf">similarity effects</A>.
+<li> Aresty poster (2010) by Lara Greenberg on <A HREF="./pdf/Aresty2010_CDS.pdf">child speech</A>.
+<li> Aresty poster (2010) by Sophia Kao 2010 on <A HREF="./pdf/Aresty2010_zu.pdf">Japanese accents</A>. 
+<BR>
+<BR>
+<BR>
+Here are some pictures of the lab students presenting their projects:<BR>
+<BR>
+<img src="./image/NatJessCornell.jpg" class="book-cover" alt="Book cover"><BR>
+<img src="./image/Aresty2013all.jpg" class="book-cover" alt="Book cover">
+<img src="./image/Aresty2013Nat.jpg" class="book-cover" alt="Book cover"><BR>
+<img src="./image/ACAL2012.jpg" class="book-cover" alt="Book cover">
+<img src="./image/Aresty2012.jpg" class="book-cover" alt="Book cover"><BR>
+<img src="./image/AudreyLara.jpg" class="book-cover" alt="Book cover">
+<img src="./image/KellyPLC.jpg" class="book-cover" alt="Book cover"><BR>
+<img src="./image/LaraMelRUMMIT.jpg" class="book-cover" alt="Book cover">
+<img src="./image/SophiaFAJL.jpg" class="book-cover" alt="Book cover"><BR>
+<img src="./image/Kelly.jpg" class="book-cover" alt="Book cover">
+<img src="./image/Lara.jpg" class="book-cover" alt="Book cover"><BR>
+<img src="./image/Sophia.jpg" class="book-cover" alt="Book cover">
+<img src="./image/French.jpg" class="book-cover" alt="Book cover">
+<br><br>
+    </div>
+
+    <h2 id="courses-taught">Courses taught</h2>
+    <div class="content-block">
+        慶應<BR>
+<li> 言語学特殊XI, XII （音声学）
+<li> GIC （音声学）
+<br>
+<br>
+ 非常勤（音声学、言語学セミナー）<BR>
+<li> 首都大学東京 (2015-2017)
+<li> 国際基督教大学 (2015-2017)
+<li> 関西学院大学 (2017)
+<li> 東京言語研究所 (2017)
+<br>
+<br>
+
+ Rutgers<BR>
+
+
+<li> A graduate phonetics seminar 
+<li> A graduate seminar on experimental linguistics
+<li> A graduate introduction to phonetics
+<li> A graduate advanced phonology 
+<li> An undergraduate introduction to phonetics
+<li> An undergraduate practicum course on experimental linguistics
+<li> An undergraduate introduction to linguistics
+
+
+<br>
+<br>
+ University of Georgia<BR>
+
+
+<li> A graduate seminar (advanced phonetics & phonology, plus research skills)
+<li> A graduate introduction to phonetics
+<li> A graduate introduction to phonology
+
+
+
+<br>
+<br>
+ UMass, Amherst<BR>
+
+<li> The Structure of Japanese
+<li> An introduction to linguistics
+<br><br>
+    </div>
+
+</main>
+
+</body>
+</html>

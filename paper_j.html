@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本語著作 — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748;
+            --color-text-light: #5a6577;
+            --color-bg: #fafaf9;
+            --color-surface: #ffffff;
+            --color-accent: #4a6fa5;
+            --color-gold: #b89a4a;
+            --color-border: #d4cfc7;
+            --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header {
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+        }
+        .site-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a {
+            display: block;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 6rem;
+        }
+        h2:first-child { margin-top: 0; }
+
+        .content-block {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .content-block li, .item-list li {
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            list-style: none;
+        }
+        .content-block li::before, .item-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .paper-entry {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eeebe6;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            overflow: hidden;
+        }
+        .paper-entry:last-child { border-bottom: none; }
+
+        .paper-entry img.book-cover, .content-block img.book-cover {
+            float: left;
+            width: 110px;
+            margin: 0.25rem 1rem 0.75rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-block img.photo {
+            width: 250px;
+            border-radius: 6px;
+            margin: 0.5rem 0.75rem 0.75rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 1rem 0;
+        }
+        .photo-grid img {
+            width: 200px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px dashed var(--color-gold);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .highlight-box h3 {
+            color: #92400e;
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box a {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .contact-block {
+            background: var(--color-section-bg);
+            border-left: 3px solid var(--color-gold);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .institution { font-weight: 600; color: var(--color-text); margin-top: 1rem; }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .site-name { font-size: 1.5rem; }
+            nav a { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+            h2 { font-size: 1.25rem; }
+            .paper-entry img.book-cover, .content-block img.book-cover { width: 80px; }
+            .content-block img.photo { width: 180px; }
+            .photo-grid img { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html"  class="active">日本語</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <div class="highlight-box">
+        <h3>📖 著書一覧</h3>
+        <p>今までに出版した書籍のまとめは<a href="book_timeline_kawahara.html" target="_blank">こちら</a>をご覧ください！</p>
+    </div>
+
+    <div class="toc" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:8px;padding:1.5rem;margin-bottom:2rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:8px;">
+        <a href="#2026" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2026</a>
+        <a href="#2024" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2024</a>
+        <a href="#2023" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2023</a>
+        <a href="#2022" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2022</a>
+        <a href="#2021" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2021</a>
+        <a href="#2020" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2020</a>
+        <a href="#2019" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2019</a>
+        <a href="#2018" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2018</a>
+        <a href="#2017" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2017</a>
+        <a href="#2016" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2016</a>
+        <a href="#2015" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2015</a>
+        <a href="#2014" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2014</a>
+        <a href="#2013" style="display:block;text-align:center;padding:0.45rem 0.25rem;font-size:0.88rem;font-weight:600;color:var(--color-text-light);background:var(--color-section-bg);border:1px solid var(--color-border);border-radius:6px;text-decoration:none;transition:all 0.15s;">2013</a>
+        </div>
+    </div>
+
+    <h2>連絡先・略歴</h2>
+    <div class="contact-block">
+        〒108-8345　 
+<br>東京都港区三田2－15－45
+<br>慶應義塾大学 
+<BR>
+<BR>直通電話: 03-5427-1595
+<BR>
+<BR>執筆・取材・メディア出演などの依頼はこちら：kawaharashigeto.info@gmail.com（マネージャー田中）。原稿料を頂いている著作物はPDFを公開できませんが、個別対応できる場合がありますので、マネージャーにご連絡ください。ただし、書籍のPDFはお送りできません。<BR>
+<BR>
+
+
+略歴：<BR>
+<li> 国際基督教大学　学士（教養、2002年）
+<li> マサチューセッツ大学　博士（言語学、2007年）
+<li> ジョージア大学言語学プログラム助教授（2007−2008）
+<li> ラトガーズ大学言語学科助教授（2008−2012）
+<li> 慶應義塾大学言語文化研究所（2013−）<BR>
+<BR>
+
+現職：
+<li> <A HREF="http://www.icl.keio.ac.jp" target="new">慶應言語文化研究所</A>教授
+<li> <A HREF="https://iculinguistics.wordpress.com" target="new">ICU Linguistics</A>理事
+<li> <A HREF="https://www.cambridge.org/core/journals/phonology" target="new">Phonology</A> 編集者 （2021-）
+<BR>
+
+
+
+<BR>
+<li>エルディシュ数：4 (Kawahara <= Kingston <= Nichols <= Warnow <= Erdös)<BR>
+<li>ベーコン数：3（川原繁人 <= 上白石萌音 <= アラン・メンケン <= ケビン・ベーコン）
+    </div>
+
+    <h2>書籍サポートページまとめ</h2>
+    <div class="content-block">
+        <A HREF="https://note.com/keiophonetics/n/n40699163b4de" target="new">『言語学者、生成ＡＩを危ぶむ』（補足資料）</A><BR>
+
+<A HREF="nhk2025.html" target="new">「声」の言語学入門: 私たちはいかに話し、歌うのか（読者サポートページ）</A><BR>
+
+<A HREF="utaukarada2024.html" target="new">『絵本　うたうからだのふしぎ』（読者サポートページ）</A><BR>
+
+<A HREF="rapbook2023.html" target="new">『言語学的ラップの世界』（読者サポートページ）</A><BR>
+
+<A HREF="d21.html" target="new">『なぜ、おかしの名前はパピプペポが多いのか？』（読者サポートページ</A><BR>
+
+<A HREF="asahi.html" target="new">『音声学者、娘とことばの不思議に飛び込む』読者サポートページ</A><BR>
+
+<A HREF="daiwa.html" target="new">『フリースタイル言語学』読者サポートページ</A><BR>
+
+<A HREF="kyooyoo.html" target="new">『言語学者、外の世界へ羽ばたく』補足事項</A><BR>
+
+<A HREF="sanseido.html" target="new">『ビジュアル音声学』補足事項・教材</A><BR>
+
+<A HREF="hitsuji2017.html" target="new">『「あ」は「い」より大きい！？：音象徴で学ぶ音声学入門』補足事項・教材</A><BR>
+<A HREF="iwanami.html" target="new">『音とことばの不思議な世界』補足事項・教材</A><BR>
+<BR>
+<A HREF="IPAcard.html" target="new">IPAカード遊び方解説</A><BR>
+<BR>
+    </div>
+
+    <section id="2026">
+    <h2>2026</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <a href="https://www.amazon.co.jp/dp/4048117882" target="_blank">
+  <img src="./KadokawaCover.png" class="book-cover" alt="Book cover">川原繁人（2026）『友だち以上恋人未満の人工知能：言語学者のＡＩ倫理ノート』. KADOKAWA.
+</a>
+    </div>
+    <div class="paper-entry">
+        川原繁人（2026）<A HREF="./pdf/57_kawahara.pdf" target="new">AI時代の研究不正について -- 短編フィクションを通じた考察</A>. 慶應義塾大学言語文化研究所紀要 57: 175-192.【上記書籍の番外編です】.
+    </div>
+    <div class="paper-entry">
+        川原繁人（2026）<A HREF="./pdf/Kagaku_202605_0367_Kawahara.pdf" target="new">生成AIが研究不正を加速させる可能性について</A>. 科学5月号(岩波):367- 370.
+    </div>
+    <div class="paper-entry">
+        川原繁人・岩瀬央（2026）<A HREF="./pdf/Kagaku_202606_0478_Kawahara&Iwase.pdf" target="new">生成AIは研究不正をどこまで拒否するのか——倫理的ガードレールの実験的検証</A>. 科学6月号(岩波):478-481.
+    </div>
+    <div class="paper-entry">
+        川原繁人（2026）<A HREF="./pdf/Kagaku_202608_0655_Kawahara.pdf" target="new">査読の機密性は守れるか: AI の「そそのかし」に関する実験報告</A>. 科学8月号(岩波):655-658.
+    </div>
+    <div class="paper-entry">
+        川原繁人（2026）<A HREF="./pdf/音韻論学会川原2026_05_AI_misconduct.pdf" target="new">実験音韻論研究に生成 AI を使用する場合に気をつけるべきこと </A>. 日本音韻論学会発表スライド.
+    </div>
+    <div class="paper-entry">
+        川原繁人・北山陽一・牧村久実・野村憲司 (2026) <A HREF="./pdf/JSPS_preceedings_MRI.pdf" target="new">調音動画教材のユニバーサルデザイ ン—人工内耳装用児への提供を起点として—</A>. 日本音声学会予稿集.
+    </div>
+    <div class="paper-entry">
+        勝村夏帆・川原繁人 (2026) <A HREF="./pdf/xxx.pdf" target="new">日本語における両唇音の唇歯音化について—恋愛リアリティー ショーを用いた探索的分析—</A>. 日本音声学会予稿集.
+    </div>
+    <div class="paper-entry">
+        （2026）<A HREF="https://wpb.shueisha.co.jp/news/lifestyle/20260126-129908/" target="new">上垣皓太郎と川原繁人の日本語偏愛談義</A>. 『週間プレイボーイ』.
+    </div>
+    <div class="paper-entry">
+        <a href="https://www.amazon.co.jp/dp/4065420164/" target="_blank">
+  <img src="./utaukarada_cover_2.jpg" class="book-cover" alt="Book cover">作：川原繁人・北山陽一、漫画：牧村久美（2026）『絵本　きこえる! うたうからだのふしぎ』. 講談社.
+</a>
+    </div>
+    <div class="paper-entry">
+        <A HREF="https://gendai.media/articles/-/164432" target="new">イヤホン音量の大切さに気付けるように…</A>現代ビジネス.
+    </div>
+    <div class="paper-entry">
+        【目で学ぶ発音の仕組み】日本語の発音をMRIで徹底解説（YouTube動画）
+    </div>
+    <div class="paper-entry">
+        <iframe
+  width="280"
+  height="157"
+  src="https://www.youtube.com/embed/0LuMVBEr5Y0"
+  title="YouTube video player"
+  frame
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+    </div>
+    <div class="paper-entry">
+        <p><a name="0.1_#2025"><h2>2025</h2></a> 
+<BR>
+<div class="content">
+<A HREF="https://www.amazon.co.jp/dp/4022953381" target="new">
+  <img src="./asahiShinshoCover.png" class="book-cover" alt="Book cover">言語学者、生成AIを危ぶむ： 子供にとって毒か薬か</A>.  朝日新書. <A HREF="https://note.com/keiophonetics/n/n40699163b4de" target="new">補足note記事.</A>
+    </div>
+    <div class="paper-entry">
+        田口善弘・川原繁人（2025）【対談】<A HREF="https://gendai.media/articles/-/150334" target="new">拝啓、生成AIネイティブ世代へ</A>（全五回）. 現代ビジネス.
+    </div>
+    <div class="paper-entry">
+        川原繁人・折田奈甫・桃生朋子（2025) <A HREF="./pdf/KawaharaEtAl_Kiyo2025_GenerativeAI.pdf" target="new">子ども向け生成AI搭載おしゃべりアプリの危険性について：言語学的・心理学的・認知科学的観点から</A>. 慶應義塾大学言語文化研究所紀要 56: 31-54.
+    </div>
+    <div class="paper-entry">
+        川原繁人・竹田信子（2025）<A HREF="https://dot.asahi.com/articles/-/268855" target="new">「子どもを使って“実験”していないか？」学者と臨床心理士が考える、生成AI時代に子どもをどう育てるか</A>. AERAデジタル.
+    </div>
+    <div class="paper-entry">
+        川原繁人・神門・kz（2025）【鼎談】<A HREF="https://school.1101.com/lecture/501" target="new">日本語ラップはむしろ、やさしい</A>（ほぼ日の学校、全三回）.
+    </div>
+    <div class="paper-entry">
+        川原繁人・ANI（2025）お茶の時間. <A HREF="https://croissant-online.jp/life/243511/" target="new">クロワッサン 1138号</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人・大山顕（2025）お茶の時間. <A HREF="https://croissant-online.jp/life/241933/" target="new">クロワッサン 1137号</A>.
+    </div>
+    <div class="paper-entry">
+        <A HREF="https://amzn.asia/d/4iUl1y1" target="new">
+  <img src="./NHKShinsho2025.jpg" class="photo" alt="">「声」の言語学入門: 私たちはいかに話し、歌うのか</A>. NHK新書.
+    </div>
+    <div class="paper-entry">
+        秋田喜美・川原繁人・長塚全（2025）<A HREF="./pdf/PhonoFesta2025AkitaEtAl.pdf" target="new">笑顔は音声を通して伝わるか：笑顔と唇歯音の効果について</A>. PhonoFesta 2025.
+    </div>
+    <div class="paper-entry">
+        （監修）<A HREF="https://www.shogakukan.co.jp/books/09942554" target="new">タッチペンでまなべる！はじめてのひらがなずかん</A>. 小学館.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2025) 【インタビュー記事】：<A HREF="https://hugkum.sho.jp/740918" target="new">AIではなく人の声で育てたい――言語学者、川原繁人さん監修のタッチペンで学ぶ『ひらがなずかん』が新発売！</A>
+    </div>
+    </div>
+    </section>
+
+    <section id="2024">
+    <h2>2024</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <a href="https://www.amazon.co.jp/%E7%B5%B5%E6%9C%AC-%E3%81%86%E3%81%9F%E3%81%86%E3%81%8B%E3%82%89%E3%81%A0%E3%81%AE%E3%81%B5%E3%81%97%E3%81%8E-%E8%AC%9B%E8%AB%87%E7%A4%BE%E3%81%AE%E5%89%B5%E4%BD%9C%E7%B5%B5%E6%9C%AC-%E5%B7%9D%E5%8E%9F-%E7%B9%81%E4%BA%BA/dp/4065341590/ref=sr_1_4?qid=1700548171&s=books&sr=1-4" target="_blank">
+  <img src="./utaukarada_cover.jpg" class="book-cover" alt="Book cover">作：川原繁人・北山陽一、漫画：牧村久美（2024）『絵本　うたうからだのふしぎ』
+</a>
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2024) <A HREF="./pdf/BunkaChooKawahara2024.pdf" target="new">生成AIおしゃべりアプリは 子どもにとって薬か毒か</A>. 文化庁・言語資源小委員会での発表資料.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2024) <A HREF="https://cocreco.kodansha.co.jp/cocreco/general/books/picturebook/2wziU" target="new">歌手や声優になりたい人必見、音声学者が教える”声”の秘密</A>. コクリコ.
+    </div>
+    <div class="paper-entry">
+        北山陽一・川原繁人 (2024) <A HREF="https://cocreco.kodansha.co.jp/articles/efda4b88-2557-4e5e-ab24-d6d131ef6bf3" target="new">ゴスペラーズ北山が教える面接で「失敗」しない方法　慶應大教授と意気投合した「スゴい」体のしくみ</A>. コクリコ.
+    </div>
+    <div class="paper-entry">
+        北山陽一・川原繁人 (2024) <A HREF="https://gendai.media/articles/-/123222" target="new">ゴスペラーズ「北山陽一」がこっそり受けた、慶応大「音声学」授業のスゴイ中身…歌手が「声」を自由に操れるワケ</A>. 現代ビジネス.
+    </div>
+    <div class="paper-entry">
+        <a href="https://www.amazon.co.jp/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%81%AE%E7%A7%98%E5%AF%86-%E8%AC%9B%E8%AB%87%E7%A4%BE%E7%8F%BE%E4%BB%A3%E6%96%B0%E6%9B%B8-%E5%B7%9D%E5%8E%9F-%E7%B9%81%E4%BA%BA/dp/4065350557/ref=sr_1_1?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=3O4VB66PD98V2&keywords=%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%81%AE%E7%A7%98%E5%AF%86&qid=1706680183&sprefix=%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%81%AE%E7%A7%98%E5%AF%86%2Caps%2C358&sr=8-1" target="_blank">
+    <img src="./gendaishinsho2024.jpeg" class="photo" alt="">
+  </a>
+川原繁人 （w/ 俵万智・Mummy-D・山寺宏一・川添愛）（2024)　『日本語の秘密〜言語学者、ことばの達人に会いにいく』</A>. 講談社現代新書. </p>
+    </div>
+    <div class="paper-entry">
+        川添愛・川原繁人・三木那由他 (2024) <A HREF="https://gendai.media/articles/-/129859" target="new">ChatGPTの発話の背後に人間はいるのか？</A>　群像online.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2024) <A HREF="https://gendai.media/articles/-/123866" target="new">お菓子の名前には本当に「パピプペポ」が似合うのか？</A>. 群像.
+    </div>
+    <div class="paper-entry">
+        (鼎談)<A HREF="https://note.com/aymusk/n/ndd63ed3f568d" target="new">上坂あゆ美</A>・川原繁人・<A HREF="https://x.com/_goudo_" target="new">神門</A> AI時代の「言葉」. <A HREF="https://www.sendenkaigi.com/books/back-number-brain/detail.php?id=33290" target="new">月刊ブレーン2024年10月号</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2024) <A HREF="https://numero.jp/?p=439899" target="new">経験がひらめきを産む</A>. Numero 11月号.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2024) <A HREF="https://gendai.media/articles/-/123867" target="new">自分事としての、あまりに自分事としての哲学（書評 ：三木那由多『言葉の風景、哲学のレンズ』）</A>. 群像.
+    </div>
+    <div class="paper-entry">
+        <a href="https://www.amazon.co.jp/dp/4479321063" target="_blank">
+  <img src="./daiwa_bunko_2024.jpg" class="photo" alt=""> 川原繁人 (2024)「あ」は「い」より大きい！？　身近で楽しい音声学</A>. 大和書房. (2017年に出版された単行本の文庫版です。俵万智さんにより解説と書き下ろしのエッセイ付き">
+</a>
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2024) <A HREF="./pdf/大阪保健医療学会誌ー空気力学.pdf" target="new">ポケモンを使って空気力学を教える〜文理の垣根を超えた言語研究の魅力〜</A>. 大阪保険医雑誌.
+    </div>
+    <div class="paper-entry">
+        古澤里菜・浅野真菜・<B>川原繁人</B>（2024）<A HREF="./pdf/0049_kawahara.pdf" target="new">城南海氏のこぶしの分布に関する考察：言語学的観点から. REPORTS of the Keio Institute of Cultural and Linguistic Studies 55: 49-64</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人（2024）音声学的瞑想のすゝめ.『同朋』
+    </div>
+    <div class="paper-entry">
+        <img src="./sadabon.jpg" class="photo" alt="">北山陽一・<B>川原繁人</B>・古澤里菜（2024) . さだまさしのアクセント研究〜「秋桜」の順行・逆行分析から探る. <A HREF="https://www.amazon.co.jp/dp/4479394176" target="new">さだまさし解体新書　ターヘル・サダトミア</A>. 大和書房.
+    </div>
+    <div class="paper-entry">
+        （聞き手）<A HREF="https://www.mita-hyoron.keio.ac.jp/spotlight/202407-1.html" target="new">話題の人：KREVA--ラップで日本語の可能性を探究</A>.『三田評論　7月号』.
+    </div>
+    <div class="paper-entry">
+        遠藤歩華・古澤里菜・鎌野慈人・<B>川原繁人</B>・Jason Shaw (2024) <A HREF="./pdf/EndohEtAl_PSJproceedings2024.pdf" target="new">日本語wh構文におけるアクセントの実現についての追実験</A>. 日本音声学会予稿集.
+    </div>
+    </div>
+    </section>
+
+    <section id="2023">
+    <h2>2023</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <img src="./rapBookCover2023.jpg" class="book-cover" alt="Book cover"><B>川原繁人</B> featuring Mummy-D・晋平太・TKda黒ぶち・しあ (2023)<A HREF="https://www.amazon.co.jp/dp/4487816882" target="new">『言語学的ラップの世界』</A>. 東京書籍. <A HREF="rapbook2023.html" target="new">サポートページ</A>.
+    </div>
+    <div class="paper-entry">
+        成田広樹 @ 川原繁人研究会「チョムスキーについてとことん語ろう！ . Voicy放送＠ヒトがつくることば⇄ことばがつくるヒト（音声のみ）：<A HREF="https://voicy.jp/channel/4124/682672?x=4475" target="new">第一回</A>、<A HREF="https://voicy.jp/channel/4124/682722?x=3796" target="new">第二回</A>、<A HREF="https://voicy.jp/channel/4124/682775" target="new">第三回</A>。YouTube動画編<A HREF="https://www.youtube.com/watch?v=O7hFAfzGDBI" target="new">第一回</A>、<A HREF="https://youtube.com/live/Q_OG6z0ldeY" target="new">第二回</A>、<A HREF="https://youtube.com/live/XZfxVUFuKdQ" target="new">第三回</A>。
+    </div>
+    <div class="paper-entry">
+        <A HREF="https://mainichi.jp/articles/20231219/k00/00m/040/087000c" target="new">小学生活の4年間ささげた中学受験　「惨敗」が教えてくれたこと</A>. 毎日新聞オンライン.
+    </div>
+    <div class="paper-entry">
+        川原繫人 (2023) 日本語ラップは言語芸術だ！――韻における母音、子音、音節構造の役割. kotoba.
+    </div>
+    <div class="paper-entry">
+        川原繫人 (2023) 「日本語ラップ」は高度な知的遊戯. Voice.
+    </div>
+    <div class="paper-entry">
+        川原繫人 (2023) <A HREF="https://futabasha-change.com/articles/-/184?page=1" target="new">【言語学者・川原繁人のTHE CHANGE】</A>. 双葉社THECHANGE.
+    </div>
+    <div class="paper-entry">
+        俵万智×川原繁人　(2023) 歌人が見ている言葉の世界を、言語学者が覗いてみた. 現代ビジネス. <A HREF="https://gendai.media/articles/-/104522?imp=0" target="new">前編</A>, <A HREF="https://gendai.media/articles/-/104532" target="new">後編</A>
+    </div>
+    <div class="paper-entry">
+        川原繁人・古澤里菜（2023）<A HREF="./pdf/0053_kawahara_furusawa.pdf" target="new">城南海の「こぶし」の音声学的特徴と音譜上の分布について：『アイツムギ』と『あなたに逢えてよかった』をもとに</A>. REPORTS of the Keio Institute of Cultural and Linguistic Studies 54: 53-77.
+    </div>
+    <div class="paper-entry">
+        川原繁人　(2023)　<A HREF="https://www.jpf.go.jp/j/project/japanese/teach/tsushin/reserch/202302.html" target="new">音声学者が答える日本語の「なぜなぜ？どうして？」</A>　国際交流基金日本語国際センター.
+    </div>
+    <div class="paper-entry">
+        <img src="./d21_blue.jpg" class="photo" alt="">  <B>川原繁人</B>（2023）『<A HREF="https://www.amazon.co.jp/dp/4799329758/" target="new">なぜ、おかしの名前はパピプペポが多いのか？ 言語学者、小学生の質問に本気で答える</A>』（ディスカヴァー21）. <A HREF="d21.html" target="new">サポートページ</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人　(2023)　<A HREF="https://fin.miraiteiban.jp/habuku_nihongo/" target="new">言語は変化していくもの。省かれていく日本語の未来</A>　大丸松坂屋百貨店WEBメディア「F.I.N」.
+    </div>
+    </div>
+    </section>
+
+    <section id="2022">
+    <h2>2022</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <img src="./asahi_cover.jpg" class="book-cover" alt="Book cover"> 
+<img src="./freestyle_cover.jpg" class="book-cover" alt="Book cover"> 
+<img src="./kyooyooCover.jpg" class="book-cover" alt="Book cover">
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022)『音声学者、娘とことばの不思議に飛び込む～プリチュアからカピチュウ、おっけーぐるぐるまで～』. 朝日出版社. ISBN:978-4-255-01275-9. <A HREF="asahi.html">サポートページ</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022)『フリースタイル言語学』. 大和書房. <A HREF="daiwa.html">サポートページ</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022)『言語学者、外の世界へ羽ばたく〜ラッパー・声優・歌手とのコラボからプリキュア・ポケモン名の分析まで〜』(リベラルアーツコトバ双書). <A HREF="kyooyoo.html">補足事項</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人×RHYMESTER (2022)<A HREF="https://www.youtube.com/watch?v=Hnf6q7RyXrY" target="new">【日本語ラップ論争は終了か？】言語学者 川原繁人×RHYMESTER Mummy-Dが日本語ラップの歴史を徹底解説</A>
+    </div>
+    <div class="paper-entry">
+        川原繁人　(2022)　言葉のプロの力でＪキャラの名前のヒミツに迫る特別企画!!. 『少年ジャンプ増刊号「ジャンプGIGA 2022 AUTUMN』.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022) 人ってどんなふうに言葉を覚えていくの？. 『母の友』.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022) <A HREF="./pdf/川原ユリイカ2022.pdf">言語の多様性と向き合う〜『エリートと教養』の考察を通じて〜</A>. 『ユリイカ』.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022) 言語芸術としての日本語ラップ〜その五つの理由〜. 『文學界』.
+    </div>
+    <div class="paper-entry">
+        川原繁人　(2022) ことばという贈りもの.  『XD Magazine Vol.6』.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022)「声にだす言葉」. 雑誌『談』no.124. インタビュー.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022) 「言葉の中にある不思議に音でアプローチする音声学」. <A HREF="https://www.keio.ac.jp/ja/about/learn-more/publications/juku/" target="new">慶應義塾大学季刊広報誌『塾』</A>夏号. インタビュー.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022) <A HREF="https://toyokeizai.net/articles/-/620538" target="new">プリキュアやポケモン 音声学で名前の秘密解明</A>. 著者インタビュー. 週刊東洋経済. 10/1.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2022)「言語学者とーちゃん、娘のお友達の名前を勝手に分析: ことばの迷い道」. 『月刊みんぱく』8月号.
+    </div>
+    <div class="paper-entry">
+        <A HREF="https://digital.asahi.com/articles/ASQ1G36SRQ1CULBJ01L.html" target="new">「ウイルスに国境ない」コロナ情報、少数言語に翻訳　研究者ら協力</A>. 朝日デジタル（取材協力）.
+    </div>
+    </div>
+    </section>
+
+    <section id="2021">
+    <h2>2021</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        川原繁人 (2021) <A HREF="https://www.asahi.com/articles/ASP7G3R29P6YUPQJ008.html?iref=pc_ss_date_article" target="new">ゴジラがコシラでない理由　面倒くさいと「強さ」に？</A> 朝日新聞デジタル.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2021) <A HREF="https://baby.mikihouse.co.jp/information/post-15810.html" target="new">響きで印象、性格も変わる!? 名づけと音の関係、ミキハウス特集記事</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2021) <A HREF="https://www.asahi.com/articles/DA3S14957363.html?iref=pc_rensai_long_38_article" target="new">強い「ゴ」やさしい「パ」『リレーおぴにおん 声を感じて1 朝日新 聞』</A> 7月1日朝刊.
+    </div>
+    <div class="paper-entry">
+        川原繁人　(2021)　ポケモン名分析から迫る言語起源の謎. <A HREF="https://www.amazon.co.jp/dp/4991203120/ref=sr_1_3?__mk_ja_JP=カタカナ&keywords=xd+magazine&qid=1639090309&sr=8-3" target="new">『XD Magazine Vol.3』</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人　(2021)　『子供の科学』11月号。「なぜ？なぜ？どうして？」回答。質問：人間の声が違うのはなぜ？
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2021)「制約は想像の母である：日本語ラップと大学教育」. 慶應義塾大学アート・センター『ARTLET』55号.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2021)「絵本のことば 言葉のえほん〜こどものとも」. 福音館書店.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2021) 書評 ：グレッチェン・マカロック氏の『インターネットは言葉をどう変えたか　デジタル時代の〈言語〉地図』（千葉敏生訳、フィルムアート社）. <A HREF="https://dokushojin.com" target="new">『週刊読書人』</A>.
+    </div>
+    <div class="paper-entry">
+        鼎談 w/ 晋平太・関根和生（2021) ラップはビジネス、教育に役立つのか? <A HREF="https://www.amazon.co.jp/教養としてのラップ-晋平太/dp/4426126940/ref=sr_1_6?__mk_ja_JP=カタカナ&dchild=1&keywords=晋平太&qid=1614909915&sr=8-6" target="new">『教養としてのラップ入門』</A>. 開発社.
+    </div>
+    <div class="paper-entry">
+        対談 w/ 細馬宏通　(2021)　からだとなまえとオノマトペー声がひらく「言語芸術」の地平. <A HREF="http://www.bungaku.net/wasebun/" target="new">早稲田文学春号</A> pp.70-97.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2021) <A HREF="./pdf/JCLA2020WSProceedings.pdf" target="new">音象徴と言語学ー教育と研究</A>.　日本認知言語学会論文集 21: 489-491.
+    </div>
+    </div>
+    </section>
+
+    <section id="2020">
+    <h2>2020</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <img src="./image/IPACardsVer2Sample.jpg" class="book-cover" alt="Book cover">川原繁人・平田佐智子・桃生朋子（2020）<A HREF="http://www.icl.keio.ac.jp/news/2020/10/ipa.html", target="new">IPAカード：楽しく学ぶ国際音声記号</A>. 慶應義塾大学言語文化研究所.
+    </div>
+    <div class="paper-entry">
+        熊谷学而・川原繁人 (2020) <A HREF="./pdf/LabialsDiaperJLSJ2020.pdf" target="new">音象徴の抽象性:赤ちゃん用のオムツの名付けにおける唇音</A>. 言語研究 157: 149-161.
+    </div>
+    <div class="paper-entry">
+        川原繁人 (2020) <A HREF="./pdf/Kawahara2020PreCureExpt.pdf" target="new">プリキュア名と両唇音の音象徴 II: 実験的検証</A>.　日本音声学会予稿集.
+    </div>
+    <div class="paper-entry">
+        川原繁人・平田佐智子・桃生朋子（2020）<A HREF="./pdf/IPAcard_kiyo2020.pdf">IPAカード</A>. <I>REPORTS of the Keio Institute of Cultural and Linguistic Studies</I> 51: 37-45.
+    </div>
+    </div>
+    </section>
+
+    <section id="2019">
+    <h2>2019</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        川原繁人 (2019) <A HREF="./pdf/PreCurePaperJpn.pdf" target="new">プリキュア名と両唇音の音象徴</A>.　日本音声学会予稿集.
+    </div>
+    <div class="paper-entry">
+        熊谷学而・川原繁人 (2019) <A HREF="./pdf/2019_オムツ予稿集.pdf" target="new">音節構造から生じる音象徴：赤ちゃん用オムツの名前の分析</A>. 日本音声学会予稿集.
+    </div>
+    <div class="paper-entry">
+        熊谷学而・川原繁人 (2019) <A HREF="./pdf/155_kumagai.pdf" target="new">ポケモン名付けにおける母音と有声阻害音効果: 実験と理論からアプローチ</A>. 言語研究 155: 65-99.
+    </div>
+    <div class="paper-entry">
+        取材協力：<A HREF="https://www.kodomonokagaku.com/magazine/" target="new">子供の科学6月号特集「音声研究で迫ることばのふしぎ」</A>
+    </div>
+    <div class="paper-entry">
+        取材協力：<A HREF="https://www.amazon.co.jp/ケトル-VOL-50-オダギリ-ジョー/dp/4778316851" target="new">イグノーベル賞を探せ!!、ケトル　VOL50.</A>
+    </div>
+    <div class="paper-entry">
+        川原繁人（2019）<A HREF="https://www.mita-hyoron.keio.ac.jp/researchers-eye/201911-3.html" target="new">研究・社会・学生・家族</A>.　三田評論11月号.
+    </div>
+    <div class="paper-entry">
+        川原繁人 ・桃生朋子 (2019)<A HREF="./pdf/MyVoicewithinSubjectFinal.pdf" target="new">「マイボイス」を使って音声学を教える有効性について：アンケート調査の報告</A>. 音声研究 23(1): 22-25.
+    </div>
+    <div class="paper-entry">
+        Zeebra × 川原繁人 (2019)  <A HREF="./pdf/ZeebraKawahara2017.pdf" target="new">日本語ラップと言語感覚</A>. 『mandala musica/マンダラ・ムジカ ― ―普遍学としての音楽へ』: .36-59（大人の事情で奥付は2018年3月）
+    </div>
+    </div>
+    </section>
+
+    <section id="2018">
+    <h2>2018</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <img src="./visPhon/visPhon.jpg" class="photo" alt=""> <B>川原繁人</B>  (2018)  『ビジュアル音声学』. 東京: 三省堂.　<A HREF="sanseido.html" target="new">補足・教材</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人・高田三枝子・松浦年男・松井理直（2018）<A HREF="./pdf/WhyStudyVoicing.pdf" target="new"> 有声性の研究はなぜ重要なのか</A>. 音声研究 22(2): 56-68.
+    </div>
+    <div class="paper-entry">
+        川原繁人  (2018)　Science Column 3: なぜヒップホップのメッセージは胸を打つのか---１万分の１の奇跡がもたらす効果とは.<A HREF="https://www.amazon.co.jp/dp/4866511087" target="new">『筋トレ×ヒップホップが最強のソリューションである』</A>文響社.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B>・桃生朋子 (2018) <A HREF="./pdf/沖縄川原桃生.pdf" target="new">音象徴で言語学を教える: 具体的成果の紹介を通して</A>. <I> Southern Review</I> 32: 3-14.
+    </div>
+    <div class="paper-entry">
+        桃生朋子・<B>川原繁人</B> (2018) <A HREF="./pdf/桃生川原紀要2018.pdf" target="new">マイボイスと大学言語学教育</A>. <I>REPORTS of the Keio Institute of Cultural and Linguistic Studies</I> 49: 97-107.
+    </div>
+    <div class="paper-entry">
+        小林 ゆきの・磯部 美和・ 桃生 朋子・ 岡部 玲子・ 川原 繁人（2018) <A HREF="./pdf/言語学会2018小林他.pdf" target="new">幼児はポケモン名付けに音象徴を用いるか</A>. 日本言語学会第155回全国大会予稿集.
+    </div>
+    </div>
+    </section>
+
+    <section id="2017">
+    <h2>2017</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <img src="./hitsuji/hitsuji_cover.jpeg" class="book-cover" alt="Book cover"> <B>川原繁人</B>  (2017)  『「あ」は「い」より大きい!?:音象徴で学ぶ音声学入門』. 東京: ひつじ書房. <A HREF="hitsuji2017.html" target="new">補足・教材</A>.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B> (2017) <A HREF="./pdf/21-2_川原_p.38.pdf" target="new">ドラゴンクエストの呪文における音象徴: 音声学の広がりを目指して</A>.　音声研究 21(2): 38-42.
+    </div>
+    <div class="paper-entry">
+        遠藤希美・<B>川原繁人</B>・皆川泰代 (2017) <A HREF="./pdf/endoEtAl2017.pdf" target="new">声楽的発声における母音知覚—基本周波数および声楽経験の影響—</A>. 音声研究 21(2): 25-37.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B>・桃生朋子 (2017) <A HREF="./pdf/21-2_桃生_p.43.pdf" target="new">音象徴の言語学教育での有効利用に向けて: 『ウルトラマン』の怪獣名と音象徴</A>. 音声研究 21(2): 43-49.
+    </div>
+    <div class="paper-entry">
+        <B> 川原繁人</B> (2017) 音そのものに意味はあるのか---ポケモンから考える「音とことばのふしぎな世界」. <A HREF="http://wired.jp" target="new">Wired</A>. <A HREF="https://twitter.com/wired_jp/status/837245881845964801" BASE TARGET="new">記事へのリンク</A>。
+    </div>
+    <div class="paper-entry">
+        <B> 川原繁人 </B> (2017)  <A HREF="./pdf/rap2017.pdf" target="new">日本語ラップの韻分析再考二〇一七――言語分析を通して韻を考える――</A>. 日本語学 36(11): 2-12.
+    </div>
+    <div class="paper-entry">
+        (2017) <A HREF="http://www.jukushin.com/archives/28130" target="new">ポケモン✖️言語学：身近なものを科学する</A>。慶應義塾大学塾生新聞.
+    </div>
+    <div class="paper-entry">
+        <B> 川原繁人</B> ・三間英樹 (2017) <A HREF="./pdf/Ch5(Kawahara.Zamma).pdf" target="new">生成音韻論における連濁の理論的分析</A>. 『連濁の研究』. 開拓社. pp. 95-128.
+    </div>
+    <div class="paper-entry">
+        <B> 川原繁人</B> ・竹村亜希子 (2017) <A HREF="./pdf/Ch6(Kawahara.Takemura).pdf" target="new">連濁の心理言語学的研究</A>.  『連濁の研究』. 開拓社. pp. 129-145.
+    </div>
+    <div class="paper-entry">
+        熊谷学而・<B>川原繁人 </B> (2017)  <A HREF="./pdf/オムツ予稿集２.pdf" target="new">音象徴の抽象性：赤ちゃん用オムツのネーミングにおける唇音</A>. 音声学会第31回全国大会予稿集. pp.49-54.
+    </div>
+    <div class="paper-entry">
+        熊谷学而・<B>川原繁人 </B> (2017)  <A HREF="./pdf/PokemonLSJ2017.pdf" target="new">ポケモンのネーミングにおける母音と有声阻害音の効果</A>. 日本言語学会第155回全国大会予稿集. pp.127-132.
+    </div>
+    <div class="paper-entry">
+        <B> 川原繁人</B>・川原睦人・熊井 規 (2017)  <A HREF="./pdf/音声学会_川原他2017.pdf" target="new"> 声道模型における共鳴の有限要素法解析</A>. 音声学会第31回全国大会予稿集. pp. 67-72.
+    </div>
+    </div>
+    </section>
+
+    <section id="2016">
+    <h2>2016</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <B>川原繁人</B>・荒井隆行・今関裕子・杉山由希子・本間武蔵・増田斐那子・松井理直・皆川泰代・吉村隆樹. 「マイボイス：難病患者様の失われる声を救う」<A HREF="http://www.psj.gr.jp/jpn/notifications/2015_academic_research_incentive_awards.html" target="new">2015年度日本音声学会学術研究奨励賞</A>.
+    </div>
+    <div class="paper-entry">
+        <B> 川原繁人</B>・桃生朋子・皆川泰代 (2016) <A HREF="./pdf/MyVoiceHigherEducation.pdf" target="new">マイボイスと大学における音声学教育</A>. 音声研究 20(3): 13-20.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B>・本間武蔵・吉村隆樹・荒井隆行 (2016) <A HREF="./pdf/MyVoice2016ASJ.pdf" target="new">マイボイス・プロジェクト—自分の声を大切に考えた人たちの物語—</A>. 日本音響学会誌 72.10: 653-661. The English version, <A HREF="./pdf/MyVoice2016AST.pdf" target="new">“MyVoice: Rescuing voices of ALS patients</A>” Acoustical Science and Technology 37(5): 202-210.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B>・桃生朋子・皆川泰代 (2016) <A HREF="./pdf/マイボイス予稿集2016.pdf" target="new">マイボイスと大学における音声学教育</A>. 音声学会全国大会予稿集.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B> (2016) <A HREF="./pdf/中大JMAC川原.pdf" target="new">日本やアメリカにおける音声学教育</A>. JMAC技術講演会予稿集.
+    </div>
+    <div class="paper-entry">
+        松井理直・<B>川原繁人</B>・シャージェイソン (2016) <A HREF="./pdf/MatsuiEtAlEPG2016.pdf" target="new">EPG を用いた日本語歯茎促音の調音的特徴</A>. 音声学会全国大会予稿集.
+    </div>
+    <div class="paper-entry">
+        遠藤希望・<B>川原繁人</B>・皆川康代 (2016) <A HREF="./pdf/EndoEtAl2016.pdf" target="new">声楽的発声における母音知覚―基本周波数および声楽経験の影響―</A>. 音声学会全国大会予稿集.
+    </div>
+    </div>
+    </section>
+
+    <section id="2015">
+    <h2>2015</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <img src="iwanami_pop.jpg" class="book-cover" alt="Book cover"><B>川原繁人</B> (2015) 「<A HREF="http://www.amazon.co.jp/音とことばのふしぎな世界――メイド声から英語の達人まで-岩波科学ライブラリー-川原-繁人/dp/4000296442/ref=sr_1_1?ie=UTF8&qid=1446121982&sr=8-1&keywords=音とことばのふしぎな世界" target="new">音とことばのふしぎな世界</A>」. 岩波サイエンスライブラリー 244. 東京 : 岩波書店. <A HREF="./pdf/川原岩波編集部宣伝.pdf">編集部宣伝</A>. <A HREF="iwanami.html" target="new">補足・教材</A>.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B>・本間武蔵・今関祐子・吉村隆樹・荻原萌・深澤はるか・増田斐那子・篠原和子・杉岡洋子・杉山由希子 (2015) <A HREF="./pdf/KawaharaEtAlMyVoice.pdf" target="new">マイボイス:言語学が失われる声を救うために</A>. 日本音韻論学会 (編) 音韻研究 18. 東京：開拓社. pp.127-136.
+    </div>
+    <div class="paper-entry">
+        川原繁人・竹村亜希子 (2015) <A HREF="./pdf/連濁は音韻論の問題か.pdf">連濁は音韻理論の問題か</A>. 西原哲雄 (編) 現代の形態論と音声学・音韻論の視点と論点. 開拓社. pp. 212-235.
+    </div>
+    </div>
+    </section>
+
+    <section id="2014">
+    <h2>2014</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <B>川原繁人</B> (2014) <A HREF="./pdf/onseigakkai2014.pdf" BASE TARGET="new">強調形に現れる促音と有声性</A>．日本音声学会全国大会ワークショップ予稿集 「有声促音の音声学的諸問題:地域変異と発話スタイルを中心に」．
+    </div>
+    <div class="paper-entry">
+        篠原和子・<B>川原繁人</B>・本間武蔵 (2014) <A HREF="./pdf/MyVoiceJSAI.pdf" target="new">身体としての言語 </A>第28回人口知能学会全国大会. 2D5-OS-28b-3.
+    </div>
+    </div>
+    </section>
+
+    <section id="2013">
+    <h2>2013</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        Brent Berlin (2013) <A HREF="./pdf/BerlinFinal.pdf">動物名称にみられる共感覚的音象徴</A>. 訳,　篠原和子・<B>川原繁人</B>. 篠原和子・宇野良子 (編) オノマトペ研究の射程ー近づく音と意味。pp. 17-42. ひつじ書房：東京。(若干のミスがありますので、 <A HREF="./pdf/BerlinScanned.pdf">出版版</A>を公開しますが、是非<A HREF="http://www.hituzi.co.jp/hituzibooks/ISBN978-4-89476-596-2.htm" target="new">ご購入</A>もご検討ください。）
+    </div>
+    <div class="paper-entry">
+        篠原和子・<B>川原繁人</B> (2013) <A HREF="./pdf/ShinoKawaSoundSymbolismJpn.pdf">音象徴の言語普遍性：「大きさのイメージをもとに</A>. 篠原和子・宇野良子 (編) オノマトペ研究の射程ー近づく音と意味。pp. 43-57. ひつじ書房：東京。(若干のミスがありますので、 <A HREF="./pdf/ShinoKawaScanned.pdf">出版版</A>を公開しますが、是非<A HREF="http://www.hituzi.co.jp/hituzibooks/ISBN978-4-89476-596-2.htm" target="new">ご購入</A>もご検討ください。）
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B> (2013) <A HREF="./pdf/ASJ_SpecialMoras.pdf" target="new">日本語特殊拍の音響と知覚ー促音を中心としてー</A>日本音響学会誌. 69(04): 191-196.
+    </div>
+    <div class="paper-entry">
+        <B>川原繁人</B> (2013)メイド文化と音声学．メイドカフェ批評．たかとら（編）: 112-121.  <A HREF="./pdf/MaidTakatora.pdf" target="new">オリジナル原稿</A>（専門的な議論あり）, <A HREF="./pdf/MaidTakatoraEdited.pdf" target="new">編集済み原稿</A>（新書風）
+    </div>
+    </div>
+    </section>
+
+</main>
+
+</body>
+</html>

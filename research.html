@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Shigeto Kawahara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text: #2d3748;
+            --color-text-light: #5a6577;
+            --color-bg: #fafaf9;
+            --color-surface: #ffffff;
+            --color-accent: #4a6fa5;
+            --color-gold: #b89a4a;
+            --color-border: #d4cfc7;
+            --color-section-bg: #f5f3ef;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+            --max-width: 720px;
+        }
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header {
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+        }
+        .site-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .site-name:hover { text-decoration: none; color: var(--color-accent); }
+
+        nav { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        nav a {
+            display: block;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 6rem;
+        }
+        h2:first-child { margin-top: 0; }
+
+        .content-block {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .content-block li, .item-list li {
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            list-style: none;
+        }
+        .content-block li::before, .item-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 5px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .paper-entry {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eeebe6;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            overflow: hidden;
+        }
+        .paper-entry:last-child { border-bottom: none; }
+
+        .paper-entry img.book-cover, .content-block img.book-cover {
+            float: left;
+            width: 110px;
+            margin: 0.25rem 1rem 0.75rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-block img.photo {
+            width: 250px;
+            border-radius: 6px;
+            margin: 0.5rem 0.75rem 0.75rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 1rem 0;
+        }
+        .photo-grid img {
+            width: 200px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px dashed var(--color-gold);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .highlight-box h3 {
+            color: #92400e;
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box a {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .contact-block {
+            background: var(--color-section-bg);
+            border-left: 3px solid var(--color-gold);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .institution { font-weight: 600; color: var(--color-text); margin-top: 1rem; }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .site-name { font-size: 1.5rem; }
+            nav a { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+            h2 { font-size: 1.25rem; }
+            .paper-entry img.book-cover, .content-block img.book-cover { width: 80px; }
+            .content-block img.photo { width: 180px; }
+            .photo-grid img { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-name">Shigeto Kawahara</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="paper.html">Papers</a></li>
+            <li><a href="research.html"  class="active">Research</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="pdf/cv_kawahara.pdf">CV</a></li>
+            <li><a href="paper_j.html">日本語</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2>General research themes</h2>
+    <div class="content-block">
+        Here are general research themes that I have been pursing in the last 10 years or so, both as a phonologist and a phonetician. <A HREF="research_themes_map.html" target="new">Here</A> is how Claude.ai has visualized my several research themes.<BR>
+    </div>
+
+    <h2>Exploring sound symbolism using Pokémon names a.k.a. Pokémonastics</h2>
+    <div class="content-block">
+        In 2016, I started analyzing sound symbolic patterns of Pokémon names, both using the corpus of existing Pokemon names and experiments using new, made-up Pokémon pictures. Not only am I having fun with this research, I am interested in using these materials for undergraduate education to make linguistics (particularly, phonetics) fun to study. With students, I enjoy exploring sound symbolic patterns in other naming patterns as well. In May 2018, I organized an international conference on <A HREF="https://1stpokemonastics.wordpress.com" BASE TARGET="new">Pokémonastics</A>. Please also see <A HREF="PokemonasticsConceptualDiagram.html" target="new">a conceptual digram</A> of the Pokémonastics project (created using Claude.ai).
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2024) <A HREF="https://ling.auf.net/lingbuzz/005843" target="new">How Pokémonastics has evolved: Ver 2.1</A>.
+    </div>
+    <div class="paper-entry">
+        川原繁人（n.d.）<A HREF="./pdf/PokemonasticsOverview.pdf" target="new">ポケモン研究の発展外観図</A> (written in Japanese, but shows how each Pokémonstics work relates to one another).
+    </div>
+    <div class="paper-entry">
+        ----------------------------------------------------------------------------------------------------------------------------------------------
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto</B>, Atsushi Noto, and Gakuji Kumagai (2018) <A HREF="./pdf/PokemonPhoneticaPublished.pdf" target="new"> Sound symbolic patterns in Pokémon names.</A> <I>Phonetica</I> 75(3): 219-244. (This paper is Open Access.)
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Miwa Isobe, Yukino Kobayashi, Tomoko Monou and Reiko Okabe (2018) <A HREF="./pdf/PokemonJapaneseChildrenRevised.pdf" target="new">Acquisition of sound symbolic values of vowels and voiced obstruents by Japanese children: Using a Pokémonastics paradigm</A>. <I>Journal of the Phonetic Society of Japan</I> 22(2): 122-130.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Gakuji Kumagai (2021) <A HREF="./pdf/pokemonParametersFinal.pdf">What voiced obstruents symbolically represent in Japanese: Evidence from the Pokémon universe</A>. <I>Journal of Japanese Linguistics</I> 37(1): 3-24. <A HREF="https://blog.degruyter.com/the-sounds-in-a-pokemon-name-impact-how-players-perceive-the-creature/" target="new">Press release from the publisher</A>.
+    </div>
+    <div class="paper-entry">
+        熊谷学而・川原繁人 (2019) <A HREF="./pdf/Pokemon3.pdf" target="new">ポケモン名付けにおける母音と有声阻害音効果: 実験と理論からアプローチ</A>.　言語研究 155: 65-99
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2019) <A HREF="./pdf/ISAPh2018_Kawahara.pdf" target="new">Teaching phonetics through sound symbolism</A>. <I>Proceedings of ISAPh</I>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Hironori Katsuda and Gakuji Kumagai (2019) <A HREF="./pdf/SoundSymbolismMaxEnt.pdf" target="new">Accounting for the stochastic nature of sound symbolism using Maximum Entropy model</A>. <I>Open Linguistics</I> 5: 109-120.
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto</B> and Gakuji Kumagai (2019) <A HREF="./pdf/PokemonType.pdf" target="new">Inferring Pokémon types using sound symbolism: The effects of voicing and labiality</A>. <I> Journal of Phonetic Society of Japan</I> 23(2): 111-116.
+    </div>
+    <div class="paper-entry">
+        取材協力 (2019)：<A HREF="https://www.amazon.co.jp/ケトル-VOL-50-オダギリ-ジョー/dp/4778316851" target="new">イグノーベル賞を探せ!！、ケトル　VOL50</A>
+    </div>
+    <div class="paper-entry">
+        Godoy, Mahayana C., Neemias Silva de Souza Filho, Juliana G. Marques de Souza, Hális Alves, <B>Shigeto Kawahara</B> (2020) <A HREF="./pdf/GottaNameThemAllBR.pdf" target="new">Gotta name'em all: an experimental study on the sound symbolism of Pokémon names in Brazilian Portuguese</A>. <I>Journal of Psycholinguistic Research</I>. 49: 717–740. <A HREF="https://link.springer.com/article/10.1007%2Fs10936-019-09679-2" target="new">The link to the published version</A>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Michinori Suzuki and Gakuji Kumagai (2020) <A HREF="./pdf/PokemonMove.pdf" target="new">Sound symbolic patterns in Pokémon move names</A>. <I>ICU Working Papers in Linguistics </I> 10: 17-30.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Jeff Moore (2021) <A HREF="./pdf/KawaharaMoorePreprint2021.pdf" target="new">How to express evolution in English Pokémon names</A>. <I>Linguistics</I> 59(3): 577-607.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Gakuji Kumagai (2021) <A HREF="./pdf/pokemonParametersFinal.pdf">What voiced obstruents symbolically represent in Japanese: Evidence from the Pokémon universe</A>. <I>Journal of Japanese Linguistics</I> 37.
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto</B> (2020) <A HREF="./pdf/WhyStudySoundSymbolismResubmission.pdf" target="new">Sound symbolism and theoretical phonology</A>. <I>Language and Linguistic Compass</I> 14(8): e12372.
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto</B> (2020) <A HREF="./pdf/Teaching-and-Learning-Guide-Template--LNCO-Kawahara.pdf" target="new">Teaching and learning guide for "Sound symbolism and theoretical phonology"</A>. <I>Language and Linguistic Compass</I> 14(8): e12376. <A HREF="https://onlinelibrary.wiley.com/doi/abs/10.1111/lnc3.12372" target="new">Here</A> is the link the published version.
+    </div>
+    <div class="paper-entry">
+        Shih, Stephanie, Jordan Ackerman, Noah Hermalin, Sharon Inkelas, Hayeun Jang, Jessica Johnson, Darya Kavitskaya, <B>Shigeto Kawahara</B>, Miran Oha, Rebecca L. Starre and Alan Yu (2019, under review) <A HREF="./pdf/PokemonasticsShihEtAl.pdf" target="new">Cross-linguistic and language-specific sound symbolism: Pokémonastics</A>.
+    </div>
+    <div class="paper-entry">
+        Uno, Ryoko, Kazuko Shinohara, Yuta Hosokawa, Naho Atsumi, Gakuji Kumagai and <B>Shigeto Kawahara</B> (2020) <A HREF="./pdf/VillainsDisneyPokemon.pdf">What’s in a villain’s name? Sound symbolic values of voiced obstruents and bilabial consonants</A>.<I> Review of Cognitive Linguistics.</I>18(2): 428–457.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Mahayana C. Godoy and Gakuji Kumagai (2020) <A HREF="./pdf/PokemonFlyingTypeRevised.pdf">Do sibilants fly? Evidence from a sound symbolic pattern in Pokémon names</A>. <I>Open Linguistics</I> 6(1): 386–400.
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto </B> (2020) <A HREF="./pdf/a-wug-shaped-curve-in-sound-symbolism-the-case-of-japanese-pokemon-names.pdf" target="new">A wug-shaped curve in sound symbolism: The case of Japanese Pokémon names</A>.  <I>Phonology</I> 37(3):383-418.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2021) <A HREF="./pdf/StripeyWugRev2.pdf" target="new">Testing MaxEnt with sound symbolism: A stripy wug-shaped curve in Japanese Pokémon names</A>. <I>Language</I> 97(4): e341-e359. (Research Report). See also <A HREF="https://linguistics.ucla.edu/people/hayes/GalleryOfWugShapedCurves/index.htm" target="new">its direct source of inspiration</A>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Gakuji Kumagai and Mahayana C. Godoy (2021) <A HREF="https://www.frontiersin.org/articles/10.3389/fpsyg.2021.648948/full?&utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field=&journalName=Frontiers_in_Psychology&id=648948" target="new">English speakers can infer Pokémon types using sound symbolism</A>. <I>Frontiers in Psychology</I> 12: 648948.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Canaan Breiss (2021) <A HREF="https://www.journal-labphon.org/articles/10.5334/labphon.280/" target="new">Exploring the nature of cumulativity in sound symbolism: Experimental studies of Pokémonastics with English speakers</A>. <I>Laboratory Phonology</I> 12(1).
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2021) <A HREF="./pdf/PokemonBoubaKiki.pdf" target="new">Pokémon meets psychology and linguistics: Experimental and theoretical exploration of the bouba-kiki effect</A>. <I>Phonological Studies</I> 24: 77-84.
+    </div>
+    <div class="paper-entry">
+        Godoy, Mahayana C., André Lucas Mendes Gomes, Gakuji Kumagai & <B>Shigeto Kawahara</B> (2021) <A HREF="https://jpl.letras.ulisboa.pt/articles/10.5334/jpl.257/">Sound symbolism in Brazilian Portuguese Pokémon names: Evidence for cross-linguistic similarities and differences</A>. <I>Journal of Portuguese Linguistics</I>.
+    </div>
+    <div class="paper-entry">
+        Kumagai, Gakuji and <B>Shigeto Kawahara</B> (2022) <A HREF="https://www.dropbox.com/s/clq4hetpjncide6/PokemonRussianRevised.pdf?dl=0" target="new">How Russian speakers express evolution in Pokémon names: An experimental study with nonce words</A>. <I>Linguistic Vanguard</I>.　<A HREF="https://www.degruyter.com/document/doi/10.1515/lingvan-2021-0101/html" target="new">the published version</A>.
+    </div>
+    <div class="paper-entry">
+        Kumagai, Gakuji, Naoya Watabe and <B>Shigeto Kawahara</B> (2023) <A HREF="https://www.dropbox.com/s/k1zvw20kn4ymhlv/PokemonRussian2JPSJ_resub.pdf?dl=0" target="new">How Russian speakers express evolution in Pokémon names II: The effects of contrastive palatalization and name length</A>. <I>Journal of Phonetic Society of Japan</I> 27(2): 64-72.
+    </div>
+    <div class="paper-entry">
+        Kilpatrick, Alexander, Aleksandra Ćwiek and <B>Shigeto Kawahara</B> (2023) <A HREF="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0279350" target="new">Random forests, sound symbolism and Pokémon evolution</A>. <I>PlosOne</I> 18(1): e0279350.
+    </div>
+    <div class="paper-entry">
+        Kilpatrick, Alexander, Aleksandra Ćwiek, Eleanor Lewis and <B>Shigeto Kawahara</B> (2023) <A HREF="https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1113143/abstract" target="new">A cross-linguistic, sound symbolic relationship between bilabial consonants, voiced plosives, and Pokémon Friendship</A>. <I>Frontiers in Psychology</I>. doi: <A HREF="doi.org/10.3389/fpsyg.2023.1113143" target="new">doi.org/10.3389/fpsyg.2023.1113143</A>
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Gakuji Kumagai (2025, to appear) <A HREF="./pdf/DoesSoundSymbolismCountPokemonRevised.pdf" target="new">Sound symbolism can count three segments (whereas phonology presumably cannot)</A>. <I>Phonology</I>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2021) <A HREF="https://psyarxiv.com/fzvsu" target="new">Phonetic bases of sound symbolism: A review</A>.
+    </div>
+    </div>
+
+    <h2>Japanese geminate devoicing</h2>
+    <div class="content-block">
+        One empirical phenomenon that I have been working on since 2003 (almost 15 years now!) is geminate devoicing in Japanese loanwords (Nishimura 2003). An (oversimplified) simplified description of this phenomenon would be "voiced geminates devoice when they co-occur with another voiced obstruent---no devoicing occurs to singletons or geminates in other contexts" (e.g. [doggu] → [dokku]). To address the question of why only geminates, not singletons, devoice, in Kawahara (2016), I proposed a perception-based analysis, in which a voicing contrast is more perceptible in singletons than in geminates. To support this analysis, I conducted an acoustic and perception study. I further argued in Kawahara (2008) that the cause of devoicing---the OCP(voice) or Lyman's Law---is phonetically unnatural. Therefore, the geminate devoicing is both phonetically natural and unnatural. This claim formed a basis of my doctoral dissertation at UMass, Amherst.<BR>
+<BR>
+Since the publication of Kawahara (2006), this pattern of geminate devoicing has been analyzed in various theoretical frameworks and has contributed to various theoretical debates. After a while, I felt responsible for making "this dataset" available to the field of phonology, because the data were largely based on my own intuition (and that of Nishimura 2003). Thus, in Kawahara (2011a,b, 2012, 2013), I tested the intuitions of naive native speakers about devoicing in several environments using phonological judgment experiments. These studies largely confirmed my intuitions that I reported in 2006; however, they also revealed further interesting aspects of Japanese devoicing. For example, devoicing of geminates is not monolithic—--several phonological and lexical factors influence the naturalness of devoicing. One factor that influenced the naturalness of devoicing was lexical usage frequency (Kawahara 2011b), and I modeled this effect with Andries Coetzee (Coetzee & Kawahara, 2013).  <BR>
+<BR>
+With Shin-ichiro Sano, I went on to conduct corpus studies to investigate what people do in actual production, using the Corpus of Spontaneous Japanese. The studies have revealed that several linguistic and sociolinguistic factors affect the devoicing likelihood of geminates (Kawahara and Sano 2013; Sano and Kawahara 2013), further corroborating the complicated nature of this devoicing pattern. For a summary of the research mentioned so far, see <A HREF="./pdf/LanguageLingCompassGemDev.pdf" target="new">this paper</a>.<BR>
+<BR>
+In 2015, I finally started facing one complication which I have been setting aside since I started working on this phenomenon. That is, [p] can cause devoicing devoicing just like a voiced obstruent (e.g. [kyuupitto] “cupid”). Kawahara and San (2016) supported this observation with a corpus study and experimentation this paper. Later, this observation has led me to think that what we have been calling “Lyman’s Law” actually operates over Japanese orthography; i.e. it is not entirely phonological. This possibility is more fully explored in the Glossa paper below. Also, Kawahara (2006) has been a favorite paper of mine, but I am actually considering an alternative now: the difference between singletons and geminates in terms of their devoicability may arise from how much information a voicing contrast has in each context, where information is formally defined in terms of Shannon’s entropy. I gave an invited talk at FAJL in 2016 to explore this idea, and the write-up appeared in the proceedings.  
+<BR>
+<BR>
+
+[NB: I often get asked for a copy of Nishimura (2006)—-the original paper that found this very phenomenon. I take the liberty of making it available <A HREF="./pdf/Nishimura2006.pdf" target="new">here</A> as a service to the phonological community.]
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        You can download a lot of the papers in one file from <A HREF="./pdf/GeminateBook.pdf">here</A>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto </B> (2018) <A HREF="https://www.glossa-journal.org/articles/10.5334/gjgl.368/" target="new">Phonology and orthography: The orthographic basis of rendaku and Lyman’s Law</A>. <I>Glossa</I> 3(1).
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2017) <A HREF="./pdf/FAJL8Kawahara.pdf" target="new">Japanese geminate devoicing once again: Insights from Information Theory</A>. <I> Proceedings of Formal Approaches to Japanese Linguistics</I> 8: 43-62.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Shin-ichiro Sano (2016) <A HREF="./pdf/PDevoicingRevised.pdf" target="new">/p/-driven geminate devoicing in Japanese: Corpus and experimental evidence</A>. <I>Journal of Japanese Linguistics</I> 32: 57-77.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2015) <A HREF="./pdf/LanguageLingCompassGemDev.pdf" target="new">Geminate devoicing in Japanese loanwords: Theoretical and experimental investigations</A>. <I>Language and Linguistic Compass</I> 9(4): 168–182.
+    </div>
+    <div class="paper-entry">
+        Fukazawa Haruka, <B>Shigeto Kawahara</B>, Mafuyu Kitahara and Shin-ichiro Sano (2015) <A HREF="./pdf/Fukazawa_etal_Revised.pdf" target="new">Two is too much: Geminate devoicing in Japanese</A>. In Phonological Society of Japan (ed.) Phonological Studies 18. Tokyo: Kaitakusha. pp.3-10.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Shin-ichiroo Sano (2013) <A HREF="./pdf/KawaharaSano2013.pdf" target="new">A corpus-based study of geminate devoicing in Japanese: Linguistic factors</A>. <I>Language Sciences</I> 40: 300-307.
+    </div>
+    <div class="paper-entry">
+        Sano, Shin-ichiroo and <B>Shigeto Kawahara</B> (2013) <A HREF="./pdf/ExternalGengoKenkyuuFinal.pdf" target="new">A corpus-based study of geminate devoicing in Japanese: The role of the OCP and external factors</A>. <I> Journal of Linguistic Society of Japan (Gengo Kenkyuu)</I> 144: 103-118
+    </div>
+    <div class="paper-entry">
+        <B>Shigeto Kawahara</B> (2013) <A HREF="./pdf/DevoicingLinguisticsPublished.pdf" target="new">Testing Japanese loanword devoicing: Addressing task effects</A>. <I> Linguistics</I> 51(6): 1271–1299.
+    </div>
+    <div class="paper-entry">
+        Coetzee, Andries and <B>Shigeto Kawahara</B> (2013) <a href="./pdf/CoetzeeKawaharaNLLT.pdf" target="_blank">Frequency biases in phonological variation</a>. <I>Natural Language and Linguistic Theory</I> 31(1): 47-89.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2012) <A HREF="./pdf/LymanLingua.pdf" target="_blank">Lyman's Law is active in loanwords and nonce words: Evidence from naturalness judgment studies</A>. <I> Lingua </I> 122(11): 1193-1206.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2011a) <a href="./pdf/KawaharaNLLT2011.pdf" target="_blank">Japanese loanword devoicing revisited: A rating study</a>. <i> Natural Language and Linguistic Theory</i> 29(3): 705-723.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2011b) <a href="./pdf/KawaharaJEAL2011.pdf" target="_blank">Aspects of Japanese loanword devoicing</a>. <I> Journal of East Asian Linguistics </I> 20(2): 169–194.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2008) <a href="./pdf/JEAL2008.pdf" target="_blank"> Phonetic naturalness and unnaturalness in Japanese loanword phonology.</a> <i> Journal of East Asian Linguistics</i> 17(4): 317-330.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2006)  <a href="./pdf/Lang82.3kawahara.pdf" target="_blank">A faithfulness ranking projected from a perceptibility scale: The case of [+voice] in Japanese.</a> <i> Language</i> 82(3): 536-574.
+    </div>
+    </div>
+
+    <h2>Psycholinguistic research: phonological judgments</h2>
+    <div class="content-block">
+        I ran a series of phonological judgments experiments on geminate devoicing in Japanese loanwords (see above), and have become interested in testing other aspects of (Japanese) phonology this way. The phenomena that I have studied using phonological judgment experiments include rendaku, emphatic gemination, some accent-related phenomena, and sound symbolism. These experiments very often reveal aspects of our phonological knowledge which are otherwise difficult to access.<BR>
+<BR>
+
+In pursing this line of research, I have now become interested in investigating how different modes of experimentation affect our phonological judgments. By “modes of experimentation” I mean, for example, asking native speakers whether a particular form is possible or asking speakers to rate the naturalness of a given form. The experimental variables that I have tested include: rating vs. yes/no, real words vs. nonce words and orthography test vs. auditory test. This is one area of study that I want to elaborate on in future studies.
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <div align="center"><B> On sound symbolism </B>
+    </div>
+    </div>
+
+    <h2>Using EMA to address linguistic questions</h2>
+    <div class="content-block">
+        I never had a chance to study articulation in close detail until I started working with Donna Erickson and Atsuo Suemitsu, who introduced me to the exciting world of EMA (ElectroMagnetic Articulography). I am helping Donna’s approach to explore metrical structure of different languages in terms of jaw movement. And I am now having a great pleasure working with Jason Shaw to explore the nature of Japanese phonetics using EMA. Two themes drive our research: (i) to what extent contextual predictability affects the robustness of speech articulation in Japanese? (ii) what is the articulatory nature of devoiced vowels in Japanese, and how the question in (i) interacts with this question?
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        Shaw, Jason and <B>Shigeto Kawahara</B> (in press) <A HREF="./pdf/manuscript_gesture_reorganization_Japanese.pdf" target="new">Limits on gestural reorganization following vowel deletion: The case of Tokyo Japanese</A>. <I>Laboratory Phonology</I>.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Shigeto Kawahara</B> (2021) <A HREF="./pdf/ShawKawaharaPhoneticaReResubmission.pdf" target="new">More on the articulation of devoiced [u] in Tokyo Japanese: effects of surrounding consonants</A>. <I>Phonetica</I> 78(5/6): 467-513. <A HREF="https://www.degruyter.com/document/doi/10.1515/phon-2021-2011/html" target="new">the published version</A>.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B>Shigeto Kawahara</B> (2018) <A HREF="./pdf/Shaw_and_Kawahara_Phonology.pdf" target="new">Assessing surface phonological specification through simulation and classification of phonetic trajectories.</A> <I>Phonology</I> 35(3): 481–522. <A HREF="https://www.cambridge.org/core/journals/phonology/article/assessing-surface-phonological-specification-through-simulation-and-classification-of-phonetic-trajectories/0DD32025F747FE1B70E87F13A5BCA140" target="new">Link to the published version</A>.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B>Shigeto Kawahara</B> (2018) <A HREF="./pdf/Jphon_vowel_devoicing_upload.pdf" target="new">The lingual gesture of devoiced /u/ in Tokyo Japanese</A>. <I>Journal of Phonetics</I>. 66: 100-118.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Jason Shaw (2018) <A HREF="./pdf/IMFestschrift_KawaShaw2.pdf" target="new">Persistence of prosody</A>. A Festshrift for Junko Ito and Armin Mester.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Shigeto Kawahara</B> (2018) <A HREF="./pdf/AMP2017ShawKawahara.pdf" target="new">Consequences of high vowel deletion for syllabification in Japanese</A>. <I> Proceedings of AMP 2017</I>.
+    </div>
+    <div class="paper-entry">
+        Moore, Jeff, Jason Shaw, <B>Shigeto Kawahara</B>, & Takayuki Arai (2018) <A HREF="./pdf/MooreEtAl_AST2018.pdf" target="new">Articulation strategies for English liquids used by Japanese speakers</A>. <I> Acoustic Science and Technology</I> 39(2): 75-83.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Shigeto Kawahara</B> (2018) <A HREF="./pdf/AMP2017ShawKawahara.pdf" target="new">Consequences of high vowel deletion for syllabification in Japanese</A>. <I> Proceedings of AMP 2017</I>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Donna Erickson, and Atsuo Suemitsu (2017) <A HREF="./pdf/JapaneseVowelJaw.pdf" target="new">The phonetics of jaw displacement in Japanese vowels</A>. <I> Acoustical Science and Technology</I> 38(2): 99-107.
+    </div>
+    <div class="paper-entry">
+        Erickson, Donna, Kiyoshi Honda and <B>Shigeto Kawahara</B> (2017) <A HREF="./pdf/EricksonHondaKawahara.pdf" target="new">Interaction of jaw displacement and F0 peak in syllables produced with contrastive emphasis</A>.<I> Acoustical Science and Technology</I> 38(3): 137-146.
+    </div>
+    <div class="paper-entry">
+        Erickson, Donna, Chunyue Zhu, <B>Shigeto Kawahara</B>, and Atsuo Suemitsu (2016) <A HREF="./pdf/Ericksonetal_MandarinChineseEmotionalSpeech.pdf" target="new">Articulation, acoustics and perception of Mandarin Chinese emotional speech</A>.<I> Open Linguistics </I>2: 620-635.
+    </div>
+    <div class="paper-entry">
+        Erickson, Donna and <B> Shigeto Kawahara</B> (2016) <A HREF="./pdf/lingvang-erickson-kawahara.pdf" target="new">Articulatory correlates of metrical structure: Studying jaw displacement patterns</A>. <I> Linguistic Vanguard</I> 2: 103-118.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Donna Erickson, and Atsuo Suemitsu (2015) <A HREF="./pdf/OnseiKenkyuu19_2_2.pdf" target="new">Edge prominence and declination in Japanese jaw displacement patterns: A view from the C/D model</A>.  <A HREF="https://cdmodel.wordpress.com" target="new">A special issue on the C/D model</A>, <I>Journal of the Phonetic Society of Japan</I> 19(2): 33-43.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Hinako Masuda, Donna Erickson, Jeff Moore, Atsuo Suemitsu and Yoshiho Shibuya (2014) <A HREF="./pdf/OnseiKenkyuu2014Quantifying.pdf" target="_blank">Quantifying the effects of vowel quality and preceding consonants on jaw displacement: Japanese data</A>. <I>Journal of the Phonetic Society of Japan</I> 18(2): 54-62.
+    </div>
+    </div>
+
+    <h2>The influence of predictability on sound patterns</h2>
+    <div class="content-block">
+        This is a relatively new project. Through the interaction with Jason Shaw and Beth Hume, I became interested in how predictability affects sound patterns of human language. The general observation is that speakers implement contrasts that are not predictable more robustly. On the other hand, speakers tend to reduce those elements that are predictable. In Shannon’s Information Theory, this predictability can be quantified as informational entropy. Now I am interested in exploring (i) how this approach to phonetics and phonology can explain the sound patterns of non-Indo-European languages, as well as (ii) its interaction with other principles of grammar. Jason Shaw and I have edited a special issue of Linguistics Vanguard on this topic.
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        Kilpatrick, Alexander, Shigeto Kawahara, Rikke Bundgaard-Nielsen, Brett Baker and Janet Fletcher (2020) Japanese perceptual epenthesis is modulated by transitional probability. <I>Language and Speech</I>, Online first.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Kawahara, Shigeto </B> (2019) <A HREF="./pdf/ShawKawaharaLgSp2017.pdf" target="new">Effects of Surprisal and Entropy on vowel duration in Japanese</A>. <I>Language and Speech</I>. 62(1): 80-114.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Shigeto Kawahara</B> (2018)<A HREF="https://www.degruyter.com/view/j/lingvan.2018.4.issue-s2/issue-files/lingvan.2018.4.issue-s2.xml" target="new"> The Role of Predictability in Shaping Human Language Sound Patterns</A>. <I> Linguistics Vanguard, special issue</I>.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Shigeto Kawahara</B> (2018) <A HREF="./pdf/PredictabilitySpecialIssueIntro" target="new">Predictability and phonology: Past, present & future</A>. <I> Linguistics Vanguard </I> 4(S2).
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto </B> and Seunghun Lee  (2018) <A HREF="./pdf/KoreanTruncationRevised.pdf" target="new">Truncation in Message-Oriented Phonology: A case study using Korean vocative truncation</A>.<I> Linguistics Vanguard</I> 4(S2): 1-8.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2017) <A HREF="./pdf/FAJL8Kawahara.pdf" target="new">Japanese geminate devoicing once again: Insights from Information Theory</A>. <I> Proceedings of Formal Approaches to Japanese Linguistics 8</I>: 43-62.
+    </div>
+    </div>
+
+    <h2>Phonetics of duration</h2>
+    <div class="content-block">
+        My interests in the phonology of geminates naturally led me to examine the phonetic properties of duration-based contrasts. I have studied various aspects of Japanese geminates and long vowels. Not only do I study the durational properties of lexical contrasts, I am also interested in lengthening phenomena that occur to express emphasis. I have been working on these phonetic projects primarily with Aaron Braver. Recently, I enjoy using the Corpus of Spontaneous Japanese to explore durational patterns in spontaneous speech.
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        Braver, Aaron and Shigeto Kawahara (2020, submitted) <A HREF="./pdf/English_Lengthening_Full_Paper_With_Perception.pdf">Acoustics and perception of emphatic lengthening in English</A>.
+    </div>
+    <div class="paper-entry">
+        Shaw, Jason and <B> Kawahara, Shigeto </B> (2019) <A HREF="./pdf/ShawKawaharaLgSp2017.pdf" target="new">Effects of Surprisal and Entropy on vowel duration in Japanese</A>. <I>Language and Speech</I>. 62(1): 80-114.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto </B> (2018) <A HREF="./pdf/KawaharaASJSpeechComFinal.pdf" target="new">Durational vowel-coda interaction in spontaneous Japanese utterances</A>. <I> Acoustical Science and Technology</I> 39(2): 138-139.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto </B> (2017) <A HREF="./pdf/JASA_vol_142_iss_1_EL143_Kawahara.pdf" target="new">Durational compensation within a CV mora in spontaneous Japanese: Evidence from the Corpus of Spontaneous Japanese</A>. <I>Journal of the Acoustical Society of America</I> 142: EL143. <A HREF="http://asa.scitation.org/doi/full/10.1121/1.4994674" target="new" target="new">A link to the published article</A>
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto</B> and Melanie Pangilinan (2017) <A HREF="./pdf/GC_KawaharaPangilinan_Revision.pdf" target="new">Spectral continuity, amplitude changes, and perception of length contrasts</A>. In H. Kubozono (ed.) <I> Aspects of Geminate Consonants</I>. Oxford: Oxford University Press. pp. 13-33.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2016) <A HREF="./pdf/JapaneseHasSyllablesFinal.pdf" target="new">Japanese has syllables: A reply to Labrune (2012)</A>. <I>Phonology</I> 33(1): 169–194.<BR> <A HREF="./pdf/LabruneReplyPublished.pdf" target="new">The published version</A>. <A HREF="http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=10368807&fulltextType=RA&fileId=S0952675716000063.pdf" target="new"> The link to the CUP site</A>
+    </div>
+    <div class="paper-entry">
+        <B> Kawahara, Shigeto</B> and Melanie Pangilinan (2017) <A HREF="./pdf/GC_KawaharaPangilinan_Revision.pdf" target="new">Spectral continuity, amplitude changes, and perception of length contrasts</A>. In H. Kubozono (ed.) <I> Aspects of Geminate Consonants</I>. Oxford: Oxford University Press. pp. 13-33.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Aaron Braver (2014) <A HREF="./pdf/MultiEmphasisFinal.pdf" target="new">Durational properties of emphatically-lengthened consonants in Japanese</A>. <I>Journal of International Phonetic Association</I> 44(3): 237-260.
+    </div>
+    <div class="paper-entry">
+        Braver, Aaron and <B>Shigeto Kawahara</B> (2014) <A HREF="./pdf/wccfl31monomoraic.pdf" target="_blank">Incomplete vowel lengthening: A first study</A>. Proceedings of the 31st meeting of West Coast Conference on Formal Linguistics. pp.86-95. Sommerville: Cascadilla Press.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2015) <A HREF="./pdf/HandbookSokuonPublished.pdf" target="new">The phonetics of sokuon, obstruent geminates</A>. In Haruo Kubozono (ed.) <I> The Handbook of Japanese Language and Linguistics: Phonetics and Phonology</I>. Mouton. pp. 43-73.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Aaron Braver (2013) <A HREF="./pdf/MultiVowel.pdf" target="new">The phonetics of emphatic vowel lengthening in Japanese</A>. <I> Open Journal of Modern Linguistics</I> 3(2): 141-148. <A HREF="http://www.scirp.org/journal/PaperInformation.aspx?PaperID=32916" target="new">Open Access version</A>.
+    </div>
+    <div class="paper-entry">
+        <B>Shigeto Kawahara</B> (2012) <A HREF="./pdf/IEICE2012Kawahara.pdf" target="_blank">Amplitude changes facilitate categorization and discrimination of length contrasts</A>. IEICE Technical Report. <I>THE INSTITUTE OF ELECTRONICS, INFORMATION AND COMMUNICATION ENGINEERS</I> 112: 67-72.
+    </div>
+    <div class="paper-entry">
+        Kingston, John, <B>Shigeto Kawahara</B>, Della Chambless, Daniel Mash and Eve Brenner-Alsop (2009)  <a href="./pdf/DurCont_KingstonEtAl.pdf" target="_blank">Contextual effects on the perception of duration.</a><I>  Journal of Phonetics</I>. 37(3): 297-320.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2006)  <a href="./pdf/Lang82.3kawahara.pdf" target="_blank">A faithfulness ranking projected from a perceptibility scale: The case of [+voice] in Japanese.</a> <i> Language </i> 82(3): 536-574.
+    </div>
+    </div>
+
+    <h2>Accent, intonation and prosodic structure</h2>
+    <div class="content-block">
+        I have also worked on the phonetics and phonology of accent and intonation, mainly in Japanese but also in French and Mandarin. Recently, I regained my interests in phrasal phonetics and phonology, through the investigation of articulatory correlates of phrasing in English and Japanese with Donna Erickson.
+    </div>
+
+    <h2>Representative Publications in this area</h2>
+    <div class="content-block">
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto, </B>Jason Shaw, and Shinichiro Ishihara (2022) <A HREF="./pdf/RichardsFinal.pdf">Assessing the prosodic licensing of wh-in-situ in Japanese: A computational-experimental approach</A>. <I>Natural Language and Linguistic Theory</I> 40(1): 103-122.  <A HREF="https://rdcu.be/ceFCM", target="new">ShareIt</A>. <A HREF="
+http://link.springer.com/article/10.1007/s11049-021-09504-3" target="new">the published version</A>.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2016) <A HREF="./pdf/MoeTsunIntonation" target="new">The prosodic features of “tsun” and “moe” voices.</A> <I>Journal of the Phonetic Society of Japan</I> 20(2): 102-110.
+    </div>
+    <div class="paper-entry">
+        Erickson, Donna and <B> Shigeto Kawahara</B> (2016) <A HREF="./pdf/ArticulatoryMetricalStructureFinal.pdf" target="new">Articulatory correlates of metrical structure: Studying jaw displacement patterns</A>. <I> Linguistic Vanguard</I> 2: 103-118
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2015) <A HREF="./pdf/HandbookAccentPublished.pdf" target="new">The phonology of Japanese accent</A>. In Haruo Kubozono (ed.) <I>The Handbook of Japanese Language and Linguistics: Phonetics and Phonology</I>. Mouton. pp.445-492.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B>, Donna Erickson, Jeff Moore, Atsuo Suemitsu and Yoshiho Shibuya (2014) <A HREF="./pdf/OnseiKenkyuu2014Metrical.pdf" target="_blank">Jaw displacement and metrical structure in Japanese: The effect of pitch accent, foot structure, phrasal stress</A>. <I>Journal of the Phonetic Society of Japan</I> 18(2): 77-87.
+    </div>
+    <div class="paper-entry">
+        Hara, Yurie, <B>Kawahara, Shigeto</B> and Yuli Feng (2014) <A HREF="./pdf/HaraKawaharaLingua.pdf" target="new">The prosody of enhanced bias in Mandarin and Japanese negative questions</A>. <I>Lingua</I> 150: 92-116.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Sophia Kao (2012) <a href="./pdf/KawaharaKaoNLLT.pdf" target="_blank">The productivity of a root-initial accenting suffix, [-zu]: Judgment studies</a>. <I> Natural Language and Linguistic Theory</I> 30(3): 837-857.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Matt Wolf (2010) <a href="./pdf/ZuKawaharaWolfWithLinks.pdf" target="_blank"> On the existence of root-initial-accenting suffixes: An elicitation study of Japanese [-zu]</a>. <i> Linguistics</i> 48(4): 837-864. <A HREF="ZuEratta.txt" BASE TARGET="new">Eratta</A>
+    </div>
+    <div class="paper-entry">
+        Deprez, Viviane, Kristen Syrett and <B>Shigeto Kawahara</B> (2013) <A HREF="./pdf/DeprezEtAl_Lingua.pdf" target="_blank">The interaction of syntax, prosody, and discourse in licensing French wh-in-situ questions</A>. <I> Lingua</I> 124: 4-19.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> (2012) <a href="./pdf/KawaharaSelkirk.pdf" target="_blank"> The intonation of nominal parentheticals in Japanese</a>. In T. Borowsky, S. Kawahara, T. Shinya and M. Sugahara (eds.) <I>Prosody Matters</I>. Equinox: London. pp. 304-340.
+    </div>
+    <div class="paper-entry">
+        Hara, Yurie and <B>Shigeto Kawahara</B> (2012) <A HREF="./pdf/wccfl29deaccent_sig.pdf" target="_blank">The prosody of public evidence in Japanese: A rating study</A>. Proceedings of the 29th meeting of West Coast Conference on Formal Linguistics. pp.353-361. Sommerville: Cascadilla Press.
+    </div>
+    <div class="paper-entry">
+        <B>Kawahara, Shigeto</B> and Takahito Shinya (2008)  <A HREF="./pdf/Phonetica_kawa_shin.pdf">The intonation of gapping and coordination in Japanese: Evidence for Intonational Phrase and Utterance</A>.<I> Phonetica</I> 65(1-2): 62-105.
+    </div>
+    </div>
+
+    <h2>Other Topics</h2>
+    <div class="content-block">
+        Other topics that I work(ed) on (largely through collaboration) include: the impacts of phonetic perceptibility on phonological patterns, analyses of Japanese rap rhymes and puns (see <A HREF="pun.html", target="new">this page</A>), phonetic studies of African languages (with Sang-im Kim-Lee and Seunghun Lee), acoustics of child speech (with Kristen Syrett), speech perception and its interaction with phonological knowledge (with John Kingston), sound symbolism and its phonetic bases (with Kazuko Shinohara), topics in L2 acquisition (with Hinako Masuda, Jeff Moore, and Tomoko Monou), phonology of non-standard dialects of Japanese (with Yurie Hara), formal phonological theory, the phonetics of maid voice, the phonetics of yoga sounds, and a bit of semantics (with Yurie Hara). Yes I collaborate a lot, because I enjoy collaboration. I also try my best to help my students publish their papers. I believe that it requires some skill to go through the whole process, and it’s much easier if they can work with somebody with some experience.
+    </div>
+
+</main>
+
+</body>
+</html>
